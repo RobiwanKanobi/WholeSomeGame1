@@ -1,25 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
   <title>Starlight Apiary</title>
-  <desc>Glowing memory honey in a dreamlike night garden</desc>
+  <desc>Steam capsule concept art with honey jar focal point and glowing bee constellations</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#102044" />
-      <stop offset="100%" stop-color="#1f4f73" />
+      <stop offset="0%" stop-color="#14254a" />
+      <stop offset="100%" stop-color="#2a5a74" />
     </linearGradient>
-    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#8befff" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#8befff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
     </linearGradient>
-    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
-    </linearGradient>
-    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffd7ac" />
-      <stop offset="100%" stop-color="#ff9e64" />
-    </linearGradient>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="12" result="blur" />
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -27,45 +30,37 @@
     </filter>
 
   </defs>
-  <rect width="1600" height="900" rx="36" fill="url(#bg)" />
-  <rect x="28" y="28" width="1544" height="844" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
-  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
-  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">Starlight Apiary</text>
-  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">Glowing memory honey in a dreamlike night garden</text>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
 
-  <circle cx="1315" cy="170" r="88" fill="#f8ecbc" opacity="0.56" />
-  <path d="M0 625 C212 565 365 660 565 612 C748 566 925 640 1125 610 C1320 579 1482 640 1600 600 V900 H0 Z" fill="#10253f" />
-  <path d="M0 720 C220 680 362 754 558 710 C780 660 940 752 1128 710 C1340 662 1495 726 1600 700 V900 H0 Z" fill="#163151" />
-  <circle cx="980" cy="288" r="12" fill="#92e8ff" />
-  <circle cx="1038" cy="246" r="9" fill="#92e8ff" />
-  <circle cx="1088" cy="308" r="11" fill="#92e8ff" />
-  <circle cx="1142" cy="262" r="9" fill="#92e8ff" />
-  <circle cx="1186" cy="322" r="10" fill="#92e8ff" />
-  <circle cx="1246" cy="272" r="8" fill="#92e8ff" />
-  <path d="M980 288 L1038 246 L1088 308 L1142 262 L1186 322 L1246 272" fill="none" stroke="rgba(146,232,255,0.6)" stroke-width="4" />
-  <rect x="290" y="330" width="190" height="240" rx="44" fill="url(#glass)" stroke="rgba(255,255,255,0.35)" />
-  <rect x="340" y="370" width="92" height="150" rx="24" fill="rgba(255,210,124,0.28)" stroke="rgba(255,243,214,0.36)" />
-  <path d="M536 380 h140 l32 42 v138 l-32 38 h-140 l-32 -38 v-138 z" fill="rgba(255,228,168,0.14)" stroke="rgba(255,255,255,0.34)" />
-  <path d="M520 432 h168" stroke="rgba(255,255,255,0.2)" stroke-width="12" stroke-linecap="round" />
-  <path d="M520 486 h168" stroke="rgba(255,255,255,0.2)" stroke-width="12" stroke-linecap="round" />
-  <path d="M520 540 h168" stroke="rgba(255,255,255,0.2)" stroke-width="12" stroke-linecap="round" />
-  <rect x="1010" y="485" width="192" height="174" rx="36" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.32)" />
-  <path d="M1060 470 h92 v40 c0 30 -18 44 -46 44 c-28 0 -46 -14 -46 -44 z" fill="rgba(255,217,136,0.75)" stroke="rgba(255,255,255,0.28)" />
-  <rect x="1088" y="446" width="36" height="30" rx="12" fill="rgba(255,231,190,0.86)" />
-  <circle cx="1098" cy="596" r="18" fill="#7cf0ff" filter="url(#softGlow)" />
-  <circle cx="1160" cy="560" r="14" fill="#7cf0ff" filter="url(#softGlow)" />
-  <circle cx="1218" cy="608" r="17" fill="#7cf0ff" filter="url(#softGlow)" />
-  <ellipse cx="922" cy="642" rx="24" ry="13" fill="#87ecff" opacity="0.86" />
-  <ellipse cx="922" cy="642" rx="42" ry="10" fill="#87ecff" opacity="0.26" />
-  <ellipse cx="1008" cy="602" rx="20" ry="11" fill="#87ecff" opacity="0.82" />
-  <ellipse cx="1008" cy="602" rx="36" ry="9" fill="#87ecff" opacity="0.24" />
-  <ellipse cx="970" cy="548" rx="18" ry="10" fill="#87ecff" opacity="0.8" />
-  <ellipse cx="970" cy="548" rx="34" ry="8" fill="#87ecff" opacity="0.26" />
-  <circle cx="232" cy="742" r="22" fill="#274f57" />
-  <circle cx="294" cy="718" r="24" fill="#356d68" />
-  <circle cx="352" cy="746" r="18" fill="#2f6156" />
-  <circle cx="412" cy="722" r="24" fill="#2d575e" />
-  <path d="M170 784 C338 716 470 732 590 786" stroke="#4ec8a3" stroke-width="10" fill="none" stroke-linecap="round" />
-  <path d="M220 806 C370 750 502 764 628 804" stroke="#f8a6c7" stroke-width="10" fill="none" stroke-linecap="round" />
+  <circle cx="1000" cy="130" r="70" fill="#f8efc3" opacity="0.32" />
+  <path d="M0 504 C194 468 358 526 546 498 C706 474 888 526 1066 494 C1148 480 1206 470 1232 464 V706 H0 Z" fill="#11253f" />
+  <path d="M0 560 C208 528 376 578 560 548 C724 522 912 578 1080 548 C1156 534 1208 526 1232 520 V706 H0 Z" fill="#163550" />
+  <path d="M840 154 L888 126 L924 164 L970 130 L1010 176 L1058 144" fill="none" stroke="#90ebff" stroke-width="6" stroke-linecap="round" />
+  <circle cx="840" cy="154" r="9" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="888" cy="126" r="7" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="924" cy="164" r="8" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="970" cy="130" r="7" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="1010" cy="176" r="8" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="1058" cy="144" r="7" fill="#90ebff" filter="url(#glow)" />
+  <path d="M706 210 C746 166 842 156 896 202 L914 326 C918 380 876 420 822 420 H768 C714 420 672 380 676 326 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.38)" stroke-width="8" />
+  <path d="M732 242 h126 v46 c0 52 -28 76 -64 76 c-36 0 -62 -24 -62 -76 z" fill="#f0b764" filter="url(#glow)" />
+  <rect x="776" y="208" width="38" height="34" rx="12" fill="#ffe6b2" />
+  <path d="M518 300 h126 l20 26 v104 l-20 22 h-126 l-20 -22 v-104 z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.28)" stroke-width="6" />
+  <path d="M536 330 h90 M536 368 h90 M536 406 h90" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round" />
+  <ellipse cx="938" cy="468" rx="26" ry="12" fill="#82edff" />
+  <ellipse cx="988" cy="430" rx="24" ry="11" fill="#82edff" />
+  <ellipse cx="1040" cy="474" rx="28" ry="12" fill="#82edff" />
+  <ellipse cx="226" cy="592" rx="84" ry="34" fill="#2b615d" />
+  <ellipse cx="312" cy="564" rx="74" ry="30" fill="#366d66" />
+  <ellipse cx="388" cy="598" rx="66" ry="26" fill="#2b5753" />
+  <path d="M146 624 C260 566 368 568 470 620" fill="none" stroke="#53cda7" stroke-width="10" stroke-linecap="round" />
+  <path d="M192 644 C284 596 396 600 510 644" fill="none" stroke="#f6a3c5" stroke-width="10" stroke-linecap="round" />
 
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Starlight</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Apiary</text>
 </svg>

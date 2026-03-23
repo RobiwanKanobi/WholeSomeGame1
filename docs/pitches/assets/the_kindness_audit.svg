@@ -1,25 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
   <title>The Kindness Audit</title>
-  <desc>Civic magic powered by empathy, paper trails, and public upgrades</desc>
+  <desc>Steam capsule concept art with giant heart stamp, papers, and civic desk glow</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f5c29d" />
-      <stop offset="100%" stop-color="#587a86" />
+      <stop offset="0%" stop-color="#f5c7a4" />
+      <stop offset="100%" stop-color="#5e7b86" />
     </linearGradient>
-    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#ffd09d" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#ffd09d" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
     </linearGradient>
-    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
-    </linearGradient>
-    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffd7ac" />
-      <stop offset="100%" stop-color="#ff9e64" />
-    </linearGradient>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="12" result="blur" />
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -27,30 +30,27 @@
     </filter>
 
   </defs>
-  <rect width="1600" height="900" rx="36" fill="url(#bg)" />
-  <rect x="28" y="28" width="1544" height="844" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
-  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
-  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">The Kindness Audit</text>
-  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">Civic magic powered by empathy, paper trails, and public upgrades</text>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
 
-  <rect x="0" y="602" width="1600" height="298" fill="#805b48" />
-  <rect x="174" y="228" width="468" height="276" rx="26" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.34)" />
-  <rect x="910" y="204" width="492" height="328" rx="26" fill="rgba(235,245,250,0.26)" stroke="rgba(255,255,255,0.34)" />
-  <path d="M940 500 C1032 434 1110 444 1180 386 C1248 334 1312 338 1374 304" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="28" stroke-linecap="round" />
-  <rect x="212" y="496" width="1150" height="44" rx="20" fill="#6d4b3d" />
-  <rect x="252" y="544" width="1090" height="236" rx="24" fill="#715142" />
-  <rect x="302" y="334" width="112" height="132" rx="18" fill="#fff5e8" transform="rotate(-8 302 334)" />
-  <rect x="430" y="316" width="122" height="148" rx="18" fill="#fff1e0" transform="rotate(6 430 316)" />
-  <circle cx="680" cy="380" r="42" fill="#ffbf87" />
-  <path d="M680 340 C700 304 744 296 776 322 C810 350 810 404 766 426 C734 444 700 430 680 402 C660 430 626 444 594 426 C550 404 550 350 584 322 C616 296 660 304 680 340 Z" fill="#f48b7a" />
-  <circle cx="1160" cy="580" r="72" fill="rgba(255,203,156,0.18)" />
-  <rect x="1050" y="612" width="88" height="88" rx="18" fill="#ffcb9f" />
-  <rect x="1150" y="582" width="98" height="118" rx="18" fill="#96d7c6" />
-  <rect x="1260" y="632" width="84" height="68" rx="18" fill="#f7a37c" />
-  <path d="M950 740 C1048 674 1128 680 1212 632 C1276 596 1338 586 1394 586" fill="none" stroke="rgba(255,234,190,0.55)" stroke-width="10" stroke-linecap="round" />
-  <circle cx="344" cy="566" r="16" fill="#ffcb9f" />
-  <circle cx="398" cy="594" r="14" fill="#96d7c6" />
-  <circle cx="452" cy="568" r="14" fill="#f7a37c" />
-  <circle cx="508" cy="598" r="16" fill="#ffcb9f" />
+  <rect x="0" y="474" width="1232" height="232" fill="#745344" />
+  <rect x="652" y="168" width="268" height="344" rx="24" fill="#f5eee0" transform="rotate(8 652 168)" filter="url(#shadow)" />
+  <path d="M736 228 h98 M718 278 h126 M706 330 h142 M700 384 h132" stroke="#d6c9b6" stroke-width="14" stroke-linecap="round" />
+  <circle cx="866" cy="438" r="84" fill="#ffcf9a" />
+  <circle cx="866" cy="438" r="42" fill="#f58872" />
+  <path d="M866 404 C886 368 930 360 960 386 C992 414 992 468 952 490 C922 506 890 494 866 468 C842 494 810 506 780 490 C740 468 740 414 772 386 C802 360 846 368 866 404 Z" fill="#f58872" filter="url(#glow)" />
+  <rect x="298" y="194" width="176" height="242" rx="26" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.34)" />
+  <rect x="214" y="464" width="820" height="26" rx="13" fill="#634738" />
+  <rect x="208" y="490" width="842" height="146" rx="22" fill="#6d4f3f" />
+  <rect x="780" y="520" width="84" height="84" rx="18" fill="#ffcb9f" />
+  <rect x="878" y="500" width="92" height="104" rx="18" fill="#96d7c6" />
+  <rect x="984" y="536" width="80" height="68" rx="18" fill="#f7a37c" />
+  <path d="M786 624 C850 574 926 564 1016 568" fill="none" stroke="rgba(255,237,194,0.56)" stroke-width="10" stroke-linecap="round" />
 
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">The Kindness</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Audit</text>
 </svg>

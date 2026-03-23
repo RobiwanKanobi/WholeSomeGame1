@@ -2,48 +2,32 @@ from html import escape
 from pathlib import Path
 
 
-WIDTH = 1600
-HEIGHT = 900
+WIDTH = 1232
+HEIGHT = 706
 
 
-def wrap_svg(title: str, subtitle: str, defs: str, body: str) -> str:
-    safe_title = escape(title)
-    safe_subtitle = escape(subtitle)
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">
-  <title>{safe_title}</title>
-  <desc>{safe_subtitle}</desc>
-  <defs>
-{defs}
-  </defs>
-  <rect width="{WIDTH}" height="{HEIGHT}" rx="36" fill="url(#bg)" />
-  <rect x="28" y="28" width="{WIDTH - 56}" height="{HEIGHT - 56}" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
-  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
-  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">{safe_title}</text>
-  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">{safe_subtitle}</text>
-{body}
-</svg>
-"""
-
-
-def common_defs(start: str, end: str) -> str:
+def common_defs(start: str, end: str, accent: str) -> str:
     return f"""    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="{start}" />
       <stop offset="100%" stop-color="{end}" />
     </linearGradient>
-    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="{accent}" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="{accent}" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
     </linearGradient>
-    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
-    </linearGradient>
-    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffd7ac" />
-      <stop offset="100%" stop-color="#ff9e64" />
-    </linearGradient>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="12" result="blur" />
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -52,303 +36,286 @@ def common_defs(start: str, end: str) -> str:
 """
 
 
-def loom_and_lantern() -> str:
-    defs = common_defs("#2d2d6d", "#f6b386")
-    body = """
-  <circle cx="1315" cy="170" r="82" fill="#ffd69e" opacity="0.42" />
-  <path d="M0 520 C190 470 340 520 530 470 C720 420 880 500 1090 445 C1270 397 1415 470 1600 420 V900 H0 Z" fill="#2a3b68" />
-  <path d="M0 600 C180 555 315 610 520 560 C720 510 910 585 1105 536 C1290 490 1430 565 1600 520 V900 H0 Z" fill="#3d4f87" />
-  <path d="M0 690 C185 650 330 710 505 670 C700 620 930 720 1100 678 C1315 630 1465 700 1600 665 V900 H0 Z" fill="#4f3a57" />
-  <rect x="940" y="230" width="16" height="430" rx="8" fill="#4b2f45" />
-  <rect x="1160" y="230" width="16" height="430" rx="8" fill="#4b2f45" />
-  <path d="M932 235 C970 165 1126 165 1168 235" fill="none" stroke="#5d3951" stroke-width="18" stroke-linecap="round" />
-  <rect x="988" y="282" width="140" height="18" rx="9" fill="#5d3951" />
-  <rect x="1024" y="318" width="9" height="284" fill="#f77f51" />
-  <rect x="1053" y="318" width="9" height="284" fill="#ffd36f" />
-  <rect x="1082" y="318" width="9" height="284" fill="#8fe0d7" />
-  <rect x="1111" y="318" width="9" height="284" fill="#f7b4d1" />
-  <path d="M1060 360 C1255 364 1320 520 1452 566" fill="none" stroke="#ffd48a" stroke-width="10" opacity="0.76" />
-  <path d="M1115 392 C1290 420 1372 520 1508 598" fill="none" stroke="#8fe0d7" stroke-width="10" opacity="0.7" />
-  <path d="M980 680 L1165 680 L1238 734 L850 734 Z" fill="#7a5e53" />
-  <path d="M886 690 C1000 624 1118 624 1238 690" fill="none" stroke="#dbb58c" stroke-width="16" stroke-linecap="round" />
-  <circle cx="908" cy="640" r="18" fill="#ffd493" filter="url(#softGlow)" />
-  <circle cx="1208" cy="640" r="18" fill="#ffd493" filter="url(#softGlow)" />
-  <rect x="166" y="670" width="72" height="84" rx="12" fill="#6d4f4f" />
-  <rect x="250" y="628" width="92" height="126" rx="12" fill="#7d5960" />
-  <rect x="360" y="660" width="108" height="94" rx="12" fill="#92686b" />
-  <rect x="488" y="610" width="88" height="144" rx="12" fill="#7d5960" />
-  <rect x="610" y="645" width="132" height="109" rx="12" fill="#6d4f4f" />
-  <polygon points="154,670 203,628 252,670" fill="#4a3852" />
-  <polygon points="238,628 296,572 354,628" fill="#533e58" />
-  <polygon points="350,660 414,612 478,660" fill="#58405f" />
-  <polygon points="474,610 532,558 590,610" fill="#533e58" />
-  <polygon points="598,645 676,585 754,645" fill="#4a3852" />
-  <circle cx="285" cy="640" r="10" fill="#ffd493" filter="url(#softGlow)" />
-  <circle cx="534" cy="655" r="10" fill="#ffd493" filter="url(#softGlow)" />
-  <circle cx="675" cy="676" r="10" fill="#ffd493" filter="url(#softGlow)" />
-  <path d="M182 790 C420 750 660 760 855 796" stroke="rgba(255,225,180,0.48)" stroke-width="12" fill="none" stroke-linecap="round" />
-  <circle cx="1310" cy="725" r="145" fill="rgba(255,212,138,0.12)" />
+def title_block(lines: list[str], x: int = 64, y: int = 456, width: int = 410) -> str:
+    safe_lines = [escape(line) for line in lines]
+    height = 74 + len(safe_lines) * 62
+    line_text = []
+    current_y = y + 78
+
+    for line in safe_lines:
+        line_text.append(
+            f'  <text x="{x + 28}" y="{current_y}" font-family="Inter, Arial, sans-serif" '
+            f'font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" '
+            f'stroke="rgba(0,0,0,0.22)" stroke-width="8">{line}</text>'
+        )
+        current_y += 58
+
+    return "\n".join(
+        [
+            f'  <rect x="{x}" y="{y}" width="{width}" height="{height}" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />',
+            f'  <rect x="{x + 28}" y="{y + 22}" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />',
+            *line_text,
+        ]
+    )
+
+
+def wrap_svg(title: str, description: str, title_lines: list[str], defs: str, body: str) -> str:
+    safe_title = escape(title)
+    safe_description = escape(description)
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">
+  <title>{safe_title}</title>
+  <desc>{safe_description}</desc>
+  <defs>
+{defs}
+  </defs>
+  <rect width="{WIDTH}" height="{HEIGHT}" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="{WIDTH - 32}" height="{HEIGHT - 32}" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#bloom)" />
+{body}
+  <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#fog)" />
+{title_block(title_lines)}
+</svg>
 """
-    return wrap_svg("Loom & Lantern", "Textile village restoration at lantern-lit dusk", defs, body)
+
+
+def loom_and_lantern() -> str:
+    defs = common_defs("#25315b", "#f09361", "#ffd58d")
+    body = """
+  <circle cx="1056" cy="118" r="58" fill="#fff1c8" opacity="0.46" />
+  <path d="M0 432 C154 396 306 438 476 404 C660 370 858 432 1038 396 C1132 378 1194 372 1232 366 V706 H0 Z" fill="#314978" />
+  <path d="M0 510 C168 478 344 542 516 510 C686 478 856 536 1036 504 C1124 490 1188 484 1232 478 V706 H0 Z" fill="#44395c" />
+  <path d="M0 568 C174 542 362 588 536 562 C708 536 894 592 1082 554 C1156 540 1210 532 1232 526 V706 H0 Z" fill="#2f2941" />
+  <rect x="790" y="132" width="16" height="338" rx="8" fill="#35263d" />
+  <rect x="948" y="132" width="16" height="338" rx="8" fill="#35263d" />
+  <path d="M784 140 C826 72 926 72 972 140" fill="none" stroke="#3f2c44" stroke-width="16" stroke-linecap="round" />
+  <rect x="846" y="180" width="64" height="164" rx="30" fill="#ffcb73" filter="url(#glow)" />
+  <rect x="860" y="194" width="36" height="138" rx="18" fill="#fff6d6" opacity="0.8" />
+  <path d="M768 218 C1010 214 1094 314 1176 398" fill="none" stroke="#ffd584" stroke-width="10" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M774 248 C986 260 1070 344 1140 424" fill="none" stroke="#95e7db" stroke-width="8" stroke-linecap="round" />
+  <path d="M780 276 C962 300 1038 378 1102 456" fill="none" stroke="#f4a1ba" stroke-width="8" stroke-linecap="round" />
+  <rect x="824" y="166" width="8" height="188" fill="#f37e57" />
+  <rect x="850" y="166" width="8" height="188" fill="#f6c161" />
+  <rect x="876" y="166" width="8" height="188" fill="#84e2d8" />
+  <rect x="902" y="166" width="8" height="188" fill="#f4adc3" />
+  <path d="M126 560 h82 v82 h-82 z" fill="#6b5760" />
+  <path d="M228 524 h94 v118 h-94 z" fill="#7f6970" />
+  <path d="M342 548 h108 v94 h-108 z" fill="#8f7477" />
+  <path d="M472 506 h92 v136 h-92 z" fill="#75616b" />
+  <polygon points="126,560 167,522 208,560" fill="#48384f" />
+  <polygon points="228,524 275,480 322,524" fill="#533e59" />
+  <polygon points="342,548 396,506 450,548" fill="#584260" />
+  <polygon points="472,506 518,466 564,506" fill="#523d59" />
+  <circle cx="278" cy="564" r="8" fill="#ffd99f" filter="url(#glow)" />
+  <circle cx="518" cy="552" r="9" fill="#ffd99f" filter="url(#glow)" />
+"""
+    return wrap_svg("Loom & Lantern", "Steam capsule concept art with glowing lantern loom and stitched twilight thread", ["Loom", "& Lantern"], defs, body)
 
 
 def starlight_apiary() -> str:
-    defs = common_defs("#102044", "#1f4f73")
+    defs = common_defs("#14254a", "#2a5a74", "#8befff")
     body = """
-  <circle cx="1315" cy="170" r="88" fill="#f8ecbc" opacity="0.56" />
-  <path d="M0 625 C212 565 365 660 565 612 C748 566 925 640 1125 610 C1320 579 1482 640 1600 600 V900 H0 Z" fill="#10253f" />
-  <path d="M0 720 C220 680 362 754 558 710 C780 660 940 752 1128 710 C1340 662 1495 726 1600 700 V900 H0 Z" fill="#163151" />
-  <circle cx="980" cy="288" r="12" fill="#92e8ff" />
-  <circle cx="1038" cy="246" r="9" fill="#92e8ff" />
-  <circle cx="1088" cy="308" r="11" fill="#92e8ff" />
-  <circle cx="1142" cy="262" r="9" fill="#92e8ff" />
-  <circle cx="1186" cy="322" r="10" fill="#92e8ff" />
-  <circle cx="1246" cy="272" r="8" fill="#92e8ff" />
-  <path d="M980 288 L1038 246 L1088 308 L1142 262 L1186 322 L1246 272" fill="none" stroke="rgba(146,232,255,0.6)" stroke-width="4" />
-  <rect x="290" y="330" width="190" height="240" rx="44" fill="url(#glass)" stroke="rgba(255,255,255,0.35)" />
-  <rect x="340" y="370" width="92" height="150" rx="24" fill="rgba(255,210,124,0.28)" stroke="rgba(255,243,214,0.36)" />
-  <path d="M536 380 h140 l32 42 v138 l-32 38 h-140 l-32 -38 v-138 z" fill="rgba(255,228,168,0.14)" stroke="rgba(255,255,255,0.34)" />
-  <path d="M520 432 h168" stroke="rgba(255,255,255,0.2)" stroke-width="12" stroke-linecap="round" />
-  <path d="M520 486 h168" stroke="rgba(255,255,255,0.2)" stroke-width="12" stroke-linecap="round" />
-  <path d="M520 540 h168" stroke="rgba(255,255,255,0.2)" stroke-width="12" stroke-linecap="round" />
-  <rect x="1010" y="485" width="192" height="174" rx="36" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.32)" />
-  <path d="M1060 470 h92 v40 c0 30 -18 44 -46 44 c-28 0 -46 -14 -46 -44 z" fill="rgba(255,217,136,0.75)" stroke="rgba(255,255,255,0.28)" />
-  <rect x="1088" y="446" width="36" height="30" rx="12" fill="rgba(255,231,190,0.86)" />
-  <circle cx="1098" cy="596" r="18" fill="#7cf0ff" filter="url(#softGlow)" />
-  <circle cx="1160" cy="560" r="14" fill="#7cf0ff" filter="url(#softGlow)" />
-  <circle cx="1218" cy="608" r="17" fill="#7cf0ff" filter="url(#softGlow)" />
-  <ellipse cx="922" cy="642" rx="24" ry="13" fill="#87ecff" opacity="0.86" />
-  <ellipse cx="922" cy="642" rx="42" ry="10" fill="#87ecff" opacity="0.26" />
-  <ellipse cx="1008" cy="602" rx="20" ry="11" fill="#87ecff" opacity="0.82" />
-  <ellipse cx="1008" cy="602" rx="36" ry="9" fill="#87ecff" opacity="0.24" />
-  <ellipse cx="970" cy="548" rx="18" ry="10" fill="#87ecff" opacity="0.8" />
-  <ellipse cx="970" cy="548" rx="34" ry="8" fill="#87ecff" opacity="0.26" />
-  <circle cx="232" cy="742" r="22" fill="#274f57" />
-  <circle cx="294" cy="718" r="24" fill="#356d68" />
-  <circle cx="352" cy="746" r="18" fill="#2f6156" />
-  <circle cx="412" cy="722" r="24" fill="#2d575e" />
-  <path d="M170 784 C338 716 470 732 590 786" stroke="#4ec8a3" stroke-width="10" fill="none" stroke-linecap="round" />
-  <path d="M220 806 C370 750 502 764 628 804" stroke="#f8a6c7" stroke-width="10" fill="none" stroke-linecap="round" />
+  <circle cx="1000" cy="130" r="70" fill="#f8efc3" opacity="0.32" />
+  <path d="M0 504 C194 468 358 526 546 498 C706 474 888 526 1066 494 C1148 480 1206 470 1232 464 V706 H0 Z" fill="#11253f" />
+  <path d="M0 560 C208 528 376 578 560 548 C724 522 912 578 1080 548 C1156 534 1208 526 1232 520 V706 H0 Z" fill="#163550" />
+  <path d="M840 154 L888 126 L924 164 L970 130 L1010 176 L1058 144" fill="none" stroke="#90ebff" stroke-width="6" stroke-linecap="round" />
+  <circle cx="840" cy="154" r="9" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="888" cy="126" r="7" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="924" cy="164" r="8" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="970" cy="130" r="7" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="1010" cy="176" r="8" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="1058" cy="144" r="7" fill="#90ebff" filter="url(#glow)" />
+  <path d="M706 210 C746 166 842 156 896 202 L914 326 C918 380 876 420 822 420 H768 C714 420 672 380 676 326 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.38)" stroke-width="8" />
+  <path d="M732 242 h126 v46 c0 52 -28 76 -64 76 c-36 0 -62 -24 -62 -76 z" fill="#f0b764" filter="url(#glow)" />
+  <rect x="776" y="208" width="38" height="34" rx="12" fill="#ffe6b2" />
+  <path d="M518 300 h126 l20 26 v104 l-20 22 h-126 l-20 -22 v-104 z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.28)" stroke-width="6" />
+  <path d="M536 330 h90 M536 368 h90 M536 406 h90" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round" />
+  <ellipse cx="938" cy="468" rx="26" ry="12" fill="#82edff" />
+  <ellipse cx="988" cy="430" rx="24" ry="11" fill="#82edff" />
+  <ellipse cx="1040" cy="474" rx="28" ry="12" fill="#82edff" />
+  <ellipse cx="226" cy="592" rx="84" ry="34" fill="#2b615d" />
+  <ellipse cx="312" cy="564" rx="74" ry="30" fill="#366d66" />
+  <ellipse cx="388" cy="598" rx="66" ry="26" fill="#2b5753" />
+  <path d="M146 624 C260 566 368 568 470 620" fill="none" stroke="#53cda7" stroke-width="10" stroke-linecap="round" />
+  <path d="M192 644 C284 596 396 600 510 644" fill="none" stroke="#f6a3c5" stroke-width="10" stroke-linecap="round" />
 """
-    return wrap_svg("Starlight Apiary", "Glowing memory honey in a dreamlike night garden", defs, body)
+    return wrap_svg("Starlight Apiary", "Steam capsule concept art with honey jar focal point and glowing bee constellations", ["Starlight", "Apiary"], defs, body)
 
 
 def tide_painter() -> str:
-    defs = common_defs("#ffd6b1", "#4ba3d7")
+    defs = common_defs("#ffd7b4", "#4489bf", "#fff0c7")
     body = """
-  <circle cx="1290" cy="170" r="92" fill="#fff0c8" opacity="0.7" />
-  <path d="M0 475 C196 430 358 470 548 442 C756 408 920 480 1134 450 C1310 424 1452 470 1600 446 V900 H0 Z" fill="#6ec3e8" />
-  <path d="M0 566 C200 540 352 602 554 576 C764 548 934 620 1140 592 C1320 568 1460 606 1600 585 V900 H0 Z" fill="#3d91c7" />
-  <path d="M0 676 C210 660 362 706 570 690 C796 672 954 730 1156 712 C1348 694 1480 728 1600 712 V900 H0 Z" fill="#f0c99f" />
-  <path d="M0 742 C212 720 370 784 582 762 C784 740 980 798 1168 774 C1376 748 1488 786 1600 768 V900 H0 Z" fill="#efdcb4" />
-  <path d="M866 650 C948 604 1048 604 1166 656" fill="none" stroke="#ff8765" stroke-width="16" stroke-linecap="round" />
-  <path d="M880 694 C970 646 1062 648 1188 706" fill="none" stroke="#9dffde" stroke-width="14" stroke-linecap="round" />
-  <path d="M1045 430 C1162 438 1266 502 1345 578" fill="none" stroke="rgba(255,255,255,0.62)" stroke-width="12" stroke-linecap="round" />
-  <path d="M1088 468 C1202 470 1296 530 1368 612" fill="none" stroke="rgba(255,255,255,0.44)" stroke-width="9" stroke-linecap="round" />
-  <rect x="392" y="560" width="16" height="168" rx="8" fill="#6a5348" transform="rotate(-18 392 560)" />
-  <path d="M288 694 C352 634 416 604 484 604 C524 604 540 654 502 684 C438 734 374 748 306 734 Z" fill="#224f59" />
-  <circle cx="554" cy="722" r="18" fill="#f8ad7f" />
-  <circle cx="610" cy="698" r="22" fill="#f8ad7f" />
-  <circle cx="662" cy="734" r="18" fill="#f8ad7f" />
-  <path d="M508 734 C560 694 614 676 674 694" fill="none" stroke="rgba(255,255,255,0.34)" stroke-width="6" />
-  <circle cx="482" cy="786" r="10" fill="#d28b66" />
-  <circle cx="524" cy="816" r="9" fill="#d28b66" />
-  <circle cx="576" cy="790" r="8" fill="#d28b66" />
-  <circle cx="1180" cy="548" r="18" fill="rgba(255,255,255,0.4)" />
+  <circle cx="1008" cy="118" r="78" fill="#fff0c9" opacity="0.56" />
+  <path d="M0 366 C142 340 320 372 480 346 C620 324 752 350 916 324 C1040 304 1138 314 1232 304 V706 H0 Z" fill="#8fd1ef" />
+  <path d="M0 442 C156 420 332 456 492 430 C644 404 802 444 962 420 C1082 402 1168 408 1232 400 V706 H0 Z" fill="#5ca7d6" />
+  <path d="M0 528 C154 514 336 548 522 520 C698 494 862 540 1018 512 C1110 498 1176 500 1232 492 V706 H0 Z" fill="#f0c89d" />
+  <path d="M0 598 C166 584 336 626 526 606 C714 586 874 632 1028 606 C1114 592 1178 592 1232 586 V706 H0 Z" fill="#f5dfb9" />
+  <path d="M246 540 C404 432 602 404 804 450 C918 476 1022 520 1114 576" fill="none" stroke="#ff8b66" stroke-width="24" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M256 564 C432 470 630 452 828 500 C920 522 1012 568 1088 616" fill="none" stroke="#95f4de" stroke-width="10" stroke-linecap="round" />
+  <path d="M762 374 C878 382 972 426 1056 498" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="12" stroke-linecap="round" />
+  <path d="M804 408 C916 420 996 462 1070 528" fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="8" stroke-linecap="round" />
+  <rect x="196" y="498" width="14" height="140" rx="7" fill="#61473d" transform="rotate(-22 196 498)" />
+  <path d="M120 634 C156 590 198 558 246 546 C266 542 278 560 270 578 C252 618 214 642 166 650 Z" fill="#1f4854" />
+  <circle cx="388" cy="616" r="16" fill="#f5b58c" />
+  <circle cx="438" cy="596" r="18" fill="#f5b58c" />
+  <circle cx="486" cy="628" r="16" fill="#f5b58c" />
 """
-    return wrap_svg("The Tide Painter", "Sunrise brushwork that guides a living shoreline", defs, body)
+    return wrap_svg("The Tide Painter", "Steam capsule concept art with dramatic brushstroke wave and reflective sunrise beach", ["The Tide", "Painter"], defs, body)
 
 
 def clockmakers_conservatory() -> str:
-    defs = common_defs("#9ad0ac", "#34555a")
+    defs = common_defs("#90c39e", "#314d54", "#ffd486")
     body = """
-  <path d="M0 660 C220 598 392 686 590 638 C782 588 940 676 1140 632 C1320 590 1482 650 1600 618 V900 H0 Z" fill="#264143" />
-  <path d="M180 760 V270 C180 220 228 176 280 176 H1320 C1372 176 1420 220 1420 270 V760" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.3)" stroke-width="8" />
-  <path d="M348 760 V300 C348 258 380 226 420 226 H1180 C1220 226 1252 258 1252 300 V760" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="6" />
-  <path d="M800 176 V760" stroke="rgba(255,255,255,0.22)" stroke-width="6" />
-  <path d="M560 176 V760" stroke="rgba(255,255,255,0.16)" stroke-width="4" />
-  <path d="M1040 176 V760" stroke="rgba(255,255,255,0.16)" stroke-width="4" />
-  <path d="M800 176 C800 176 760 308 720 448 C684 576 628 674 560 760" fill="url(#sunbeam)" />
-  <path d="M844 176 C844 176 922 326 1024 470 C1102 582 1180 666 1250 760" fill="url(#sunbeam)" />
-  <circle cx="944" cy="458" r="126" fill="rgba(132,204,141,0.16)" />
-  <circle cx="944" cy="458" r="84" fill="rgba(255,214,126,0.14)" stroke="#d8b267" stroke-width="12" />
-  <circle cx="944" cy="458" r="24" fill="#d8b267" />
-  <circle cx="944" cy="392" r="18" fill="#d8b267" />
-  <circle cx="1002" cy="426" r="18" fill="#d8b267" />
-  <circle cx="1002" cy="492" r="18" fill="#d8b267" />
-  <circle cx="944" cy="526" r="18" fill="#d8b267" />
-  <circle cx="886" cy="492" r="18" fill="#d8b267" />
-  <circle cx="886" cy="426" r="18" fill="#d8b267" />
-  <rect x="1036" y="294" width="16" height="324" rx="8" fill="#cbb088" />
-  <circle cx="1044" cy="632" r="44" fill="#d6bb92" />
-  <circle cx="1044" cy="632" r="16" fill="#6a5d54" />
-  <path d="M454 760 C474 670 508 594 568 524 C610 476 644 412 656 356" fill="none" stroke="#5e8d5c" stroke-width="22" stroke-linecap="round" />
-  <path d="M620 544 C560 512 524 486 492 444" fill="none" stroke="#7ecf86" stroke-width="14" stroke-linecap="round" />
-  <path d="M604 456 C648 430 692 400 740 346" fill="none" stroke="#7ecf86" stroke-width="14" stroke-linecap="round" />
-  <path d="M708 760 C734 662 764 572 818 496" fill="none" stroke="#5e8d5c" stroke-width="20" stroke-linecap="round" />
-  <circle cx="614" cy="542" r="24" fill="#f8d48c" />
-  <circle cx="596" cy="448" r="20" fill="#f8d48c" />
-  <circle cx="832" cy="494" r="24" fill="#f8d48c" />
-  <rect x="1090" y="630" width="118" height="20" rx="10" fill="#7a6253" />
-  <rect x="1140" y="578" width="20" height="92" rx="10" fill="#7a6253" />
+  <path d="M0 522 C196 472 346 540 544 490 C726 446 890 522 1078 482 C1142 468 1194 460 1232 454 V706 H0 Z" fill="#233d43" />
+  <path d="M166 144 V552 C166 188 204 152 250 152 H1082 C1128 152 1166 188 1166 234 V552" fill="none" stroke="rgba(255,255,255,0.24)" stroke-width="10" />
+  <path d="M308 168 V552 M622 152 V552 M932 168 V552" stroke="rgba(255,255,255,0.14)" stroke-width="4" />
+  <path d="M894 182 C856 286 818 358 748 486" fill="none" stroke="rgba(255,241,190,0.34)" stroke-width="18" stroke-linecap="round" />
+  <circle cx="846" cy="354" r="122" fill="rgba(255,212,134,0.2)" />
+  <circle cx="846" cy="354" r="88" fill="none" stroke="#d5b06a" stroke-width="16" />
+  <circle cx="846" cy="354" r="28" fill="#d5b06a" />
+  <circle cx="846" cy="286" r="20" fill="#d5b06a" />
+  <circle cx="906" cy="322" r="20" fill="#d5b06a" />
+  <circle cx="906" cy="388" r="20" fill="#d5b06a" />
+  <circle cx="846" cy="424" r="20" fill="#d5b06a" />
+  <circle cx="786" cy="388" r="20" fill="#d5b06a" />
+  <circle cx="786" cy="322" r="20" fill="#d5b06a" />
+  <rect x="932" y="232" width="12" height="234" rx="6" fill="#d9c094" />
+  <circle cx="938" cy="490" r="34" fill="#d9c094" />
+  <path d="M522 552 C542 464 586 406 650 350" fill="none" stroke="#5a8f5e" stroke-width="22" stroke-linecap="round" />
+  <path d="M650 350 C610 328 574 298 544 254" fill="none" stroke="#82d886" stroke-width="14" stroke-linecap="round" />
+  <path d="M676 316 C716 294 756 264 804 220" fill="none" stroke="#82d886" stroke-width="14" stroke-linecap="round" />
+  <circle cx="650" cy="350" r="24" fill="#f7d68b" filter="url(#glow)" />
+  <circle cx="612" cy="286" r="18" fill="#f7d68b" />
+  <circle cx="812" cy="218" r="18" fill="#f7d68b" />
 """
-    return wrap_svg("Clockmaker's Conservatory", "Brass flowers and greenhouse puzzles tending time itself", defs, body)
+    return wrap_svg("Clockmaker's Conservatory", "Steam capsule concept art with giant brass clock flower and greenhouse silhouettes", ["Clockmaker's", "Conservatory"], defs, body)
 
 
 def song_of_the_rootbound() -> str:
-    defs = common_defs("#17355b", "#2d5d4a")
+    defs = common_defs("#183052", "#2c5a46", "#9ef6c6")
     body = """
-  <path d="M0 572 C190 520 392 598 552 560 C756 514 926 612 1128 562 C1304 520 1462 586 1600 550 V900 H0 Z" fill="#18334b" />
-  <path d="M0 684 C204 646 372 716 576 680 C786 642 962 726 1166 692 C1336 662 1486 716 1600 688 V900 H0 Z" fill="#1b413f" />
-  <circle cx="1280" cy="168" r="84" fill="#dff0c0" opacity="0.42" />
-  <ellipse cx="342" cy="484" rx="52" ry="210" fill="#20422f" />
-  <ellipse cx="1212" cy="474" rx="58" ry="220" fill="#21412f" />
-  <ellipse cx="478" cy="450" rx="44" ry="182" fill="#1f3c2f" />
-  <ellipse cx="1088" cy="434" rx="46" ry="196" fill="#1f3c2f" />
-  <rect x="736" y="492" width="22" height="210" rx="11" fill="#3b2e31" />
-  <circle cx="748" cy="446" r="52" fill="#f1b38d" />
-  <path d="M680 690 C724 624 764 592 844 580" fill="none" stroke="#6d5036" stroke-width="20" stroke-linecap="round" />
-  <path d="M820 470 C850 520 872 580 878 644" fill="none" stroke="#f0d7a1" stroke-width="10" stroke-linecap="round" />
-  <path d="M682 630 C794 598 928 586 1076 604" fill="none" stroke="rgba(141,255,196,0.62)" stroke-width="6" />
-  <path d="M658 662 C792 630 930 620 1094 642" fill="none" stroke="rgba(141,255,196,0.62)" stroke-width="6" />
-  <path d="M636 694 C800 664 954 658 1110 680" fill="none" stroke="rgba(141,255,196,0.62)" stroke-width="6" />
-  <circle cx="862" cy="636" r="14" fill="#9dffd3" filter="url(#softGlow)" />
-  <circle cx="932" cy="620" r="14" fill="#9dffd3" filter="url(#softGlow)" />
-  <circle cx="1012" cy="648" r="14" fill="#9dffd3" filter="url(#softGlow)" />
-  <path d="M320 900 C410 812 510 768 624 726 C710 694 804 680 940 662 C1048 648 1190 604 1282 528" fill="none" stroke="rgba(120,255,192,0.36)" stroke-width="14" stroke-linecap="round" />
-  <path d="M392 900 C462 830 554 778 656 748 C748 720 848 710 946 694 C1060 676 1168 640 1270 570" fill="none" stroke="rgba(120,255,192,0.24)" stroke-width="10" stroke-linecap="round" />
-  <circle cx="1018" cy="366" r="8" fill="#ffe37a" />
-  <circle cx="1058" cy="330" r="8" fill="#ffe37a" />
-  <circle cx="1098" cy="390" r="8" fill="#ffe37a" />
-  <circle cx="1148" cy="344" r="8" fill="#ffe37a" />
+  <path d="M0 504 C190 462 356 520 538 484 C722 448 898 532 1088 492 C1158 476 1208 468 1232 462 V706 H0 Z" fill="#153147" />
+  <path d="M0 570 C200 536 380 584 560 548 C736 516 920 588 1104 556 C1166 544 1210 538 1232 532 V706 H0 Z" fill="#1f423d" />
+  <ellipse cx="260" cy="364" rx="36" ry="164" fill="#20402f" />
+  <ellipse cx="1028" cy="344" rx="42" ry="186" fill="#1f3d30" />
+  <path d="M742 190 C828 190 890 246 890 338 C890 430 830 492 742 492 C654 492 594 430 594 338 C594 246 656 190 742 190 Z" fill="#5f4734" filter="url(#shadow)" />
+  <circle cx="742" cy="338" r="82" fill="#2b221c" />
+  <path d="M650 338 C690 324 794 318 834 338" fill="none" stroke="#f0d38e" stroke-width="12" stroke-linecap="round" />
+  <path d="M650 372 C694 358 792 354 836 372" fill="none" stroke="#f0d38e" stroke-width="10" stroke-linecap="round" />
+  <rect x="720" y="118" width="18" height="332" rx="9" fill="#d7bb86" />
+  <circle cx="728" cy="116" r="34" fill="#f0bc92" />
+  <path d="M564 556 C654 508 736 490 832 490 C950 490 1034 528 1122 588" fill="none" stroke="rgba(160,249,205,0.68)" stroke-width="10" stroke-linecap="round" />
+  <path d="M520 598 C636 532 756 522 874 532 C972 540 1060 576 1140 626" fill="none" stroke="rgba(160,249,205,0.42)" stroke-width="8" stroke-linecap="round" />
+  <circle cx="932" cy="512" r="12" fill="#9ef6c6" filter="url(#glow)" />
+  <circle cx="984" cy="544" r="12" fill="#9ef6c6" filter="url(#glow)" />
+  <circle cx="1044" cy="572" r="12" fill="#9ef6c6" filter="url(#glow)" />
+  <circle cx="888" cy="236" r="8" fill="#ffe88a" />
+  <circle cx="922" cy="202" r="8" fill="#ffe88a" />
+  <circle cx="964" cy="258" r="8" fill="#ffe88a" />
 """
-    return wrap_svg("Song of the Rootbound", "Paper-cut forest harmonies healing a fractured woodland", defs, body)
+    return wrap_svg("Song of the Rootbound", "Steam capsule concept art with giant lute silhouette and glowing musical roots", ["Song of the", "Rootbound"], defs, body)
 
 
 def mist_and_marmalade() -> str:
-    defs = common_defs("#ffcfab", "#648b97")
+    defs = common_defs("#ffcda7", "#6c8d97", "#ffbc7d")
     body = """
-  <rect x="0" y="546" width="1600" height="354" fill="#5d4638" />
-  <rect x="162" y="244" width="590" height="360" rx="32" fill="rgba(255,255,255,0.24)" stroke="rgba(255,255,255,0.36)" />
-  <path d="M212 466 C310 404 420 416 514 372 C586 338 640 320 702 320" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="24" stroke-linecap="round" />
-  <circle cx="998" cy="622" r="96" fill="#ffb58d" opacity="0.14" />
-  <rect x="918" y="284" width="442" height="252" rx="28" fill="rgba(211,234,244,0.28)" stroke="rgba(255,255,255,0.32)" />
-  <path d="M936 470 C1020 396 1102 414 1188 352 C1266 296 1330 318 1352 300" fill="none" stroke="rgba(255,255,255,0.34)" stroke-width="34" stroke-linecap="round" />
-  <rect x="236" y="534" width="1028" height="32" rx="16" fill="#7b5f4c" />
-  <rect x="226" y="566" width="1056" height="204" rx="24" fill="#6a4f41" />
-  <rect x="294" y="404" width="74" height="128" rx="18" fill="rgba(255,177,108,0.72)" />
-  <rect x="392" y="384" width="82" height="148" rx="18" fill="rgba(255,213,137,0.72)" />
-  <rect x="496" y="422" width="78" height="110" rx="18" fill="rgba(255,137,104,0.72)" />
-  <rect x="602" y="396" width="86" height="136" rx="18" fill="rgba(148,215,239,0.72)" />
-  <rect x="930" y="582" width="192" height="74" rx="32" fill="#f6f0de" />
-  <path d="M986 582 C962 536 970 516 1020 496 C1002 552 1040 548 1058 496 C1052 548 1082 550 1104 504" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="12" stroke-linecap="round" />
-  <circle cx="1210" cy="488" r="34" fill="rgba(255,183,112,0.82)" />
-  <circle cx="1292" cy="472" r="34" fill="rgba(132,205,239,0.82)" />
-  <circle cx="1372" cy="490" r="34" fill="rgba(246,139,118,0.82)" />
-  <rect x="1188" y="520" width="44" height="90" rx="14" fill="#f6d8b3" />
-  <rect x="1270" y="504" width="44" height="106" rx="14" fill="#f6d8b3" />
-  <rect x="1350" y="522" width="44" height="88" rx="14" fill="#f6d8b3" />
-  <circle cx="1018" cy="620" r="16" fill="#ffb27b" filter="url(#softGlow)" />
+  <rect x="0" y="468" width="1232" height="238" fill="#684b3f" />
+  <rect x="696" y="194" width="382" height="236" rx="26" fill="rgba(214,236,246,0.18)" stroke="rgba(255,255,255,0.28)" />
+  <path d="M724 378 C798 310 864 312 942 262 C998 226 1046 224 1082 206" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="26" stroke-linecap="round" />
+  <path d="M506 214 h228 c36 0 64 28 64 64 v58 c0 68 -52 120 -122 120 h-112 c-72 0 -122 -52 -122 -120 v-58 c0 -36 28 -64 64 -64 Z" fill="#ffbc7d" filter="url(#shadow)" />
+  <path d="M780 260 h38 c30 0 52 22 52 52 v52" fill="none" stroke="#f5e5c5" stroke-width="18" stroke-linecap="round" />
+  <path d="M572 202 C548 144 560 108 616 86 C598 150 642 154 662 90 C660 154 700 156 724 98" fill="none" stroke="rgba(255,255,255,0.86)" stroke-width="14" stroke-linecap="round" />
+  <path d="M526 430 h194" stroke="#fff2dc" stroke-width="18" stroke-linecap="round" />
+  <rect x="204" y="330" width="72" height="116" rx="18" fill="rgba(255,186,116,0.75)" />
+  <rect x="296" y="308" width="80" height="138" rx="18" fill="rgba(255,220,142,0.75)" />
+  <rect x="394" y="344" width="74" height="102" rx="18" fill="rgba(252,143,112,0.72)" />
+  <circle cx="938" cy="466" r="28" fill="rgba(255,183,112,0.86)" />
+  <circle cx="1008" cy="456" r="28" fill="rgba(136,210,240,0.86)" />
+  <circle cx="1078" cy="470" r="28" fill="rgba(245,150,124,0.86)" />
+  <rect x="922" y="490" width="32" height="68" rx="12" fill="#f2d0ae" />
+  <rect x="992" y="480" width="32" height="78" rx="12" fill="#f2d0ae" />
+  <rect x="1062" y="494" width="32" height="64" rx="12" fill="#f2d0ae" />
 """
-    return wrap_svg("Mist & Marmalade", "A mountain tearoom brewing comfort out of weather", defs, body)
+    return wrap_svg("Mist & Marmalade", "Steam capsule concept art with oversized glowing teacup and weather-brewed steam", ["Mist &", "Marmalade"], defs, body)
 
 
 def glassgarden_architects() -> str:
-    defs = common_defs("#5cb6d9", "#0f3958")
+    defs = common_defs("#5cb8dd", "#113a59", "#ffd88c")
     body = """
-  <path d="M0 0 C420 80 1180 20 1600 0 V900 H0 Z" fill="rgba(255,255,255,0.06)" />
-  <path d="M0 0 L1600 0 L1600 176 C1348 210 1186 270 1040 376 C900 476 760 544 550 596 C396 634 200 628 0 598 Z" fill="rgba(255,255,255,0.08)" />
-  <path d="M230 760 C330 682 450 644 590 642 C710 640 816 682 940 682 C1088 682 1194 626 1366 536" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="18" />
-  <path d="M210 760 C300 698 430 674 566 684 C720 694 850 744 972 742 C1140 740 1274 688 1388 622" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="12" />
-  <path d="M286 724 C286 584 404 470 548 470 C650 470 726 520 772 596 V724 Z" fill="url(#glass)" stroke="rgba(255,255,255,0.42)" stroke-width="8" />
-  <path d="M642 748 C642 622 748 520 876 520 C964 520 1032 558 1082 630 V748 Z" fill="url(#glass)" stroke="rgba(255,255,255,0.4)" stroke-width="8" />
-  <path d="M974 734 C974 634 1064 554 1178 554 C1262 554 1326 596 1370 660 V734 Z" fill="url(#glass)" stroke="rgba(255,255,255,0.4)" stroke-width="8" />
-  <path d="M1188 62 C1126 320 1038 454 930 622" fill="none" stroke="rgba(255,247,176,0.7)" stroke-width="18" stroke-linecap="round" />
-  <path d="M1264 42 C1188 294 1108 442 1028 588" fill="none" stroke="rgba(255,226,146,0.44)" stroke-width="12" stroke-linecap="round" />
-  <circle cx="930" cy="620" r="26" fill="#ffd486" filter="url(#softGlow)" />
-  <path d="M806 760 C822 700 842 654 878 616" fill="none" stroke="#93f6d6" stroke-width="12" stroke-linecap="round" />
-  <path d="M1096 780 C1114 720 1132 676 1162 640" fill="none" stroke="#93f6d6" stroke-width="12" stroke-linecap="round" />
-  <ellipse cx="516" cy="370" rx="22" ry="10" fill="rgba(255,255,255,0.56)" />
-  <ellipse cx="610" cy="330" rx="26" ry="12" fill="rgba(255,255,255,0.56)" />
-  <ellipse cx="1256" cy="406" rx="22" ry="10" fill="rgba(255,255,255,0.56)" />
-  <ellipse cx="1322" cy="446" rx="26" ry="12" fill="rgba(255,255,255,0.56)" />
-  <circle cx="462" cy="760" r="22" fill="#4bd5b5" opacity="0.5" />
-  <circle cx="566" cy="776" r="18" fill="#7ce8ff" opacity="0.5" />
-  <circle cx="930" cy="804" r="20" fill="#a4ffcf" opacity="0.42" />
+  <path d="M0 0 L1232 0 L1232 132 C1078 154 934 220 804 346 C698 450 596 524 444 566 C308 604 170 600 0 584 Z" fill="rgba(255,255,255,0.08)" />
+  <path d="M126 602 C216 532 334 500 466 500 C612 500 718 548 824 548 C958 548 1068 506 1176 426" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="18" stroke-linecap="round" />
+  <path d="M116 624 C216 558 332 530 462 532 C596 534 722 578 844 580 C972 582 1084 548 1186 486" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="12" stroke-linecap="round" />
+  <path d="M432 560 C432 434 532 338 656 338 C750 338 822 390 868 474 V560 Z" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.42)" stroke-width="8" />
+  <path d="M688 574 C688 468 776 388 882 388 C964 388 1028 430 1068 494 V574 Z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.38)" stroke-width="8" />
+  <path d="M1014 52 C960 252 878 374 782 510" fill="none" stroke="rgba(255,242,174,0.76)" stroke-width="20" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M1068 34 C1012 230 934 354 846 476" fill="none" stroke="rgba(255,232,160,0.48)" stroke-width="12" stroke-linecap="round" />
+  <circle cx="782" cy="510" r="22" fill="#ffd88c" filter="url(#glow)" />
+  <path d="M584 560 C602 510 618 470 650 438" fill="none" stroke="#98f5d6" stroke-width="10" stroke-linecap="round" />
+  <path d="M910 586 C926 536 944 496 970 464" fill="none" stroke="#98f5d6" stroke-width="10" stroke-linecap="round" />
+  <circle cx="342" cy="246" r="14" fill="rgba(255,255,255,0.52)" />
+  <circle cx="410" cy="216" r="10" fill="rgba(255,255,255,0.52)" />
+  <circle cx="1044" cy="290" r="12" fill="rgba(255,255,255,0.52)" />
 """
-    return wrap_svg("Glassgarden Architects", "Sunlit underwater domes grown from blown glass", defs, body)
+    return wrap_svg("Glassgarden Architects", "Steam capsule concept art with prismatic underwater domes and dramatic sunbeams", ["Glassgarden", "Architects"], defs, body)
 
 
 def the_kindness_audit() -> str:
-    defs = common_defs("#f5c29d", "#587a86")
+    defs = common_defs("#f5c7a4", "#5e7b86", "#ffd09d")
     body = """
-  <rect x="0" y="602" width="1600" height="298" fill="#805b48" />
-  <rect x="174" y="228" width="468" height="276" rx="26" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.34)" />
-  <rect x="910" y="204" width="492" height="328" rx="26" fill="rgba(235,245,250,0.26)" stroke="rgba(255,255,255,0.34)" />
-  <path d="M940 500 C1032 434 1110 444 1180 386 C1248 334 1312 338 1374 304" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="28" stroke-linecap="round" />
-  <rect x="212" y="496" width="1150" height="44" rx="20" fill="#6d4b3d" />
-  <rect x="252" y="544" width="1090" height="236" rx="24" fill="#715142" />
-  <rect x="302" y="334" width="112" height="132" rx="18" fill="#fff5e8" transform="rotate(-8 302 334)" />
-  <rect x="430" y="316" width="122" height="148" rx="18" fill="#fff1e0" transform="rotate(6 430 316)" />
-  <circle cx="680" cy="380" r="42" fill="#ffbf87" />
-  <path d="M680 340 C700 304 744 296 776 322 C810 350 810 404 766 426 C734 444 700 430 680 402 C660 430 626 444 594 426 C550 404 550 350 584 322 C616 296 660 304 680 340 Z" fill="#f48b7a" />
-  <circle cx="1160" cy="580" r="72" fill="rgba(255,203,156,0.18)" />
-  <rect x="1050" y="612" width="88" height="88" rx="18" fill="#ffcb9f" />
-  <rect x="1150" y="582" width="98" height="118" rx="18" fill="#96d7c6" />
-  <rect x="1260" y="632" width="84" height="68" rx="18" fill="#f7a37c" />
-  <path d="M950 740 C1048 674 1128 680 1212 632 C1276 596 1338 586 1394 586" fill="none" stroke="rgba(255,234,190,0.55)" stroke-width="10" stroke-linecap="round" />
-  <circle cx="344" cy="566" r="16" fill="#ffcb9f" />
-  <circle cx="398" cy="594" r="14" fill="#96d7c6" />
-  <circle cx="452" cy="568" r="14" fill="#f7a37c" />
-  <circle cx="508" cy="598" r="16" fill="#ffcb9f" />
+  <rect x="0" y="474" width="1232" height="232" fill="#745344" />
+  <rect x="652" y="168" width="268" height="344" rx="24" fill="#f5eee0" transform="rotate(8 652 168)" filter="url(#shadow)" />
+  <path d="M736 228 h98 M718 278 h126 M706 330 h142 M700 384 h132" stroke="#d6c9b6" stroke-width="14" stroke-linecap="round" />
+  <circle cx="866" cy="438" r="84" fill="#ffcf9a" />
+  <circle cx="866" cy="438" r="42" fill="#f58872" />
+  <path d="M866 404 C886 368 930 360 960 386 C992 414 992 468 952 490 C922 506 890 494 866 468 C842 494 810 506 780 490 C740 468 740 414 772 386 C802 360 846 368 866 404 Z" fill="#f58872" filter="url(#glow)" />
+  <rect x="298" y="194" width="176" height="242" rx="26" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.34)" />
+  <rect x="214" y="464" width="820" height="26" rx="13" fill="#634738" />
+  <rect x="208" y="490" width="842" height="146" rx="22" fill="#6d4f3f" />
+  <rect x="780" y="520" width="84" height="84" rx="18" fill="#ffcb9f" />
+  <rect x="878" y="500" width="92" height="104" rx="18" fill="#96d7c6" />
+  <rect x="984" y="536" width="80" height="68" rx="18" fill="#f7a37c" />
+  <path d="M786 624 C850 574 926 564 1016 568" fill="none" stroke="rgba(255,237,194,0.56)" stroke-width="10" stroke-linecap="round" />
 """
-    return wrap_svg("The Kindness Audit", "Civic magic powered by empathy, paper trails, and public upgrades", defs, body)
+    return wrap_svg("The Kindness Audit", "Steam capsule concept art with giant heart stamp, papers, and civic desk glow", ["The Kindness", "Audit"], defs, body)
 
 
 def driftwood_rails() -> str:
-    defs = common_defs("#ffc596", "#446d93")
+    defs = common_defs("#ffc89b", "#4b7194", "#ffe4a8")
     body = """
-  <circle cx="1274" cy="176" r="96" fill="#ffe0b0" opacity="0.52" />
-  <path d="M0 512 C188 470 400 522 572 490 C766 452 958 540 1168 500 C1330 470 1460 510 1600 492 V900 H0 Z" fill="#729dbe" />
-  <path d="M0 610 C216 580 406 642 590 620 C790 596 982 666 1188 638 C1374 614 1484 648 1600 634 V900 H0 Z" fill="#8fc4d9" />
-  <path d="M0 696 C188 672 422 728 620 710 C848 688 988 752 1214 730 C1388 714 1490 748 1600 738 V900 H0 Z" fill="#f3d1a4" />
-  <path d="M240 818 C334 760 422 732 518 712 C622 690 752 670 852 640 C952 608 1048 562 1196 454" fill="none" stroke="#6e5546" stroke-width="22" stroke-linecap="round" />
-  <path d="M250 818 C344 760 434 732 530 712 C634 690 762 670 862 640 C964 608 1060 562 1208 454" fill="none" stroke="#b1856a" stroke-width="8" stroke-linecap="round" />
-  <path d="M306 794 L296 842 M396 758 L388 810 M486 730 L478 784 M584 702 L576 758 M688 676 L680 732 M792 648 L784 704 M894 616 L886 674 M996 572 L990 628 M1100 520 L1092 576" stroke="#4e382f" stroke-width="10" stroke-linecap="round" />
-  <rect x="620" y="676" width="124" height="54" rx="18" fill="#9b694d" />
-  <circle cx="648" cy="738" r="20" fill="#4a3b34" />
-  <circle cx="724" cy="738" r="20" fill="#4a3b34" />
-  <rect x="648" y="622" width="70" height="46" rx="16" fill="#d4b184" />
-  <path d="M1120 532 C1164 512 1208 514 1258 530" fill="none" stroke="#ffefc5" stroke-width="10" stroke-linecap="round" />
-  <circle cx="1238" cy="522" r="10" fill="#ffefc5" filter="url(#softGlow)" />
-  <circle cx="1278" cy="548" r="10" fill="#ffefc5" filter="url(#softGlow)" />
-  <circle cx="1318" cy="516" r="10" fill="#ffefc5" filter="url(#softGlow)" />
-  <circle cx="1358" cy="548" r="10" fill="#ffefc5" filter="url(#softGlow)" />
-  <path d="M1218 560 C1250 520 1296 486 1356 472" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="8" stroke-linecap="round" />
+  <circle cx="1036" cy="116" r="78" fill="#ffe2b1" opacity="0.5" />
+  <path d="M0 392 C146 362 312 404 484 376 C658 348 840 406 1020 380 C1104 368 1174 364 1232 356 V706 H0 Z" fill="#709abe" />
+  <path d="M0 486 C164 462 330 508 500 484 C674 460 864 514 1028 492 C1110 480 1178 478 1232 472 V706 H0 Z" fill="#8ec0d6" />
+  <path d="M0 566 C172 548 340 592 522 572 C708 552 874 602 1034 580 C1110 570 1176 568 1232 562 V706 H0 Z" fill="#f0cf9f" />
+  <path d="M118 646 C244 576 360 540 496 510 C632 480 734 454 832 398 C908 354 980 300 1084 230" fill="none" stroke="#6d5344" stroke-width="24" stroke-linecap="round" />
+  <path d="M122 646 C248 576 364 540 500 510 C636 480 738 454 836 398 C912 354 984 300 1088 230" fill="none" stroke="#b08668" stroke-width="8" stroke-linecap="round" />
+  <path d="M172 620 L164 670 M270 586 L262 636 M368 556 L360 606 M468 526 L460 578 M566 496 L560 546 M664 462 L658 514 M758 426 L752 474 M850 376 L844 426 M944 322 L938 372" stroke="#4b392f" stroke-width="10" stroke-linecap="round" />
+  <rect x="434" y="512" width="118" height="48" rx="18" fill="#a2704e" filter="url(#shadow)" />
+  <circle cx="460" cy="566" r="18" fill="#453830" />
+  <circle cx="528" cy="566" r="18" fill="#453830" />
+  <rect x="456" y="470" width="64" height="38" rx="14" fill="#d4b183" />
+  <path d="M960 310 C1006 286 1048 286 1096 304" fill="none" stroke="#fff1c7" stroke-width="10" stroke-linecap="round" />
+  <circle cx="1076" cy="300" r="10" fill="#fff1c7" filter="url(#glow)" />
+  <circle cx="1112" cy="324" r="10" fill="#fff1c7" filter="url(#glow)" />
+  <circle cx="1148" cy="296" r="10" fill="#fff1c7" filter="url(#glow)" />
 """
-    return wrap_svg("Driftwood Rails", "Sunset handcar routes built across tidal flats for festival season", defs, body)
+    return wrap_svg("Driftwood Rails", "Steam capsule concept art with dynamic track diagonal and handcar heading to festival lights", ["Driftwood", "Rails"], defs, body)
 
 
 def comet_croft() -> str:
-    defs = common_defs("#6b88d9", "#1d3559")
+    defs = common_defs("#6783d6", "#1f3760", "#ffe59a")
     body = """
-  <path d="M0 0 C382 58 1024 18 1600 0 V900 H0 Z" fill="rgba(255,255,255,0.06)" />
-  <path d="M328 690 C356 566 470 498 610 498 H980 C1120 498 1228 566 1260 690 L1286 796 H304 Z" fill="#6c583a" />
-  <path d="M356 654 C398 582 486 540 612 540 H976 C1092 540 1184 586 1232 654 L1252 728 H334 Z" fill="#8cc66b" />
-  <path d="M520 564 v160 M644 556 v168 M768 552 v172 M892 556 v168 M1016 566 v158" stroke="rgba(65,110,58,0.75)" stroke-width="10" />
-  <path d="M520 632 C560 596 612 588 644 620 C678 652 734 652 768 622 C800 594 850 590 892 624 C930 654 982 650 1016 618" fill="none" stroke="#d7f3a5" stroke-width="12" stroke-linecap="round" />
-  <path d="M1130 540 l0 164" stroke="#d9c18f" stroke-width="12" />
-  <path d="M1130 540 l-56 38 l56 38 l56 -38 z" fill="#d9c18f" />
-  <path d="M830 488 C880 414 960 374 1062 368 C1176 362 1284 304 1394 176" fill="none" stroke="rgba(255,255,255,0.34)" stroke-width="10" stroke-linecap="round" />
-  <path d="M1166 250 l74 -28 l-56 64" fill="#ffe8af" />
-  <path d="M1286 182 l82 -32 l-62 72" fill="#ffe8af" />
-  <path d="M1076 294 l66 -24 l-48 58" fill="#ffe8af" />
-  <circle cx="1236" cy="220" r="18" fill="#ffe8af" opacity="0.6" />
-  <circle cx="1368" cy="146" r="14" fill="#ffe8af" opacity="0.6" />
-  <circle cx="1140" cy="270" r="12" fill="#ffe8af" opacity="0.6" />
-  <ellipse cx="792" cy="812" rx="270" ry="48" fill="rgba(0,0,0,0.18)" />
+  <path d="M0 0 C322 46 846 18 1232 0 V706 H0 Z" fill="rgba(255,255,255,0.05)" />
+  <path d="M706 104 C770 50 858 30 962 26 C1056 22 1134 4 1216 -36" fill="none" stroke="rgba(255,255,255,0.24)" stroke-width="6" stroke-linecap="round" />
+  <path d="M760 468 C782 372 864 320 964 320 H1120 C1210 320 1280 372 1298 468 L1308 560 H738 Z" fill="#6c593a" transform="translate(-120,0)" />
+  <path d="M786 444 C822 384 886 350 970 350 H1114 C1198 350 1260 388 1290 444 L1300 504 H774 Z" fill="#8cc56a" transform="translate(-120,0)" />
+  <path d="M834 374 v112 M914 370 v116 M994 370 v118 M1076 372 v116 M1158 380 v108" stroke="rgba(62,107,55,0.76)" stroke-width="8" transform="translate(-120,0)" />
+  <path d="M834 424 C858 396 892 388 914 414 C936 440 974 440 994 414 C1016 388 1048 384 1076 414 C1100 440 1134 438 1158 410" fill="none" stroke="#d7f4a6" stroke-width="10" stroke-linecap="round" transform="translate(-120,0)" />
+  <path d="M1080 96 C984 166 918 216 844 312" fill="none" stroke="#ffe59a" stroke-width="20" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M1128 70 C1030 148 958 198 884 290" fill="none" stroke="rgba(255,229,154,0.48)" stroke-width="10" stroke-linecap="round" />
+  <path d="M1084 98 l74 -26 l-54 62" fill="#ffe59a" />
+  <path d="M1146 56 l64 -22 l-46 56" fill="#ffe59a" />
+  <circle cx="932" cy="558" r="28" fill="rgba(0,0,0,0.18)" />
 """
-    return wrap_svg("Comet Croft", "Sky-island farming beneath drifting constellations", defs, body)
+    return wrap_svg("Comet Croft", "Steam capsule concept art with bright comet diagonal and floating farmhouse island", ["Comet", "Croft"], defs, body)
 
 
 SCENES = {

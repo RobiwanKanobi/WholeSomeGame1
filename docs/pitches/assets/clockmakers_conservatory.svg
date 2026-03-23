@@ -1,25 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
   <title>Clockmaker&#x27;s Conservatory</title>
-  <desc>Brass flowers and greenhouse puzzles tending time itself</desc>
+  <desc>Steam capsule concept art with giant brass clock flower and greenhouse silhouettes</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#9ad0ac" />
-      <stop offset="100%" stop-color="#34555a" />
+      <stop offset="0%" stop-color="#90c39e" />
+      <stop offset="100%" stop-color="#314d54" />
     </linearGradient>
-    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#ffd486" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#ffd486" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
     </linearGradient>
-    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
-      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
-    </linearGradient>
-    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffd7ac" />
-      <stop offset="100%" stop-color="#ff9e64" />
-    </linearGradient>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="12" result="blur" />
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -27,40 +30,35 @@
     </filter>
 
   </defs>
-  <rect width="1600" height="900" rx="36" fill="url(#bg)" />
-  <rect x="28" y="28" width="1544" height="844" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
-  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
-  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">Clockmaker&#x27;s Conservatory</text>
-  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">Brass flowers and greenhouse puzzles tending time itself</text>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
 
-  <path d="M0 660 C220 598 392 686 590 638 C782 588 940 676 1140 632 C1320 590 1482 650 1600 618 V900 H0 Z" fill="#264143" />
-  <path d="M180 760 V270 C180 220 228 176 280 176 H1320 C1372 176 1420 220 1420 270 V760" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.3)" stroke-width="8" />
-  <path d="M348 760 V300 C348 258 380 226 420 226 H1180 C1220 226 1252 258 1252 300 V760" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="6" />
-  <path d="M800 176 V760" stroke="rgba(255,255,255,0.22)" stroke-width="6" />
-  <path d="M560 176 V760" stroke="rgba(255,255,255,0.16)" stroke-width="4" />
-  <path d="M1040 176 V760" stroke="rgba(255,255,255,0.16)" stroke-width="4" />
-  <path d="M800 176 C800 176 760 308 720 448 C684 576 628 674 560 760" fill="url(#sunbeam)" />
-  <path d="M844 176 C844 176 922 326 1024 470 C1102 582 1180 666 1250 760" fill="url(#sunbeam)" />
-  <circle cx="944" cy="458" r="126" fill="rgba(132,204,141,0.16)" />
-  <circle cx="944" cy="458" r="84" fill="rgba(255,214,126,0.14)" stroke="#d8b267" stroke-width="12" />
-  <circle cx="944" cy="458" r="24" fill="#d8b267" />
-  <circle cx="944" cy="392" r="18" fill="#d8b267" />
-  <circle cx="1002" cy="426" r="18" fill="#d8b267" />
-  <circle cx="1002" cy="492" r="18" fill="#d8b267" />
-  <circle cx="944" cy="526" r="18" fill="#d8b267" />
-  <circle cx="886" cy="492" r="18" fill="#d8b267" />
-  <circle cx="886" cy="426" r="18" fill="#d8b267" />
-  <rect x="1036" y="294" width="16" height="324" rx="8" fill="#cbb088" />
-  <circle cx="1044" cy="632" r="44" fill="#d6bb92" />
-  <circle cx="1044" cy="632" r="16" fill="#6a5d54" />
-  <path d="M454 760 C474 670 508 594 568 524 C610 476 644 412 656 356" fill="none" stroke="#5e8d5c" stroke-width="22" stroke-linecap="round" />
-  <path d="M620 544 C560 512 524 486 492 444" fill="none" stroke="#7ecf86" stroke-width="14" stroke-linecap="round" />
-  <path d="M604 456 C648 430 692 400 740 346" fill="none" stroke="#7ecf86" stroke-width="14" stroke-linecap="round" />
-  <path d="M708 760 C734 662 764 572 818 496" fill="none" stroke="#5e8d5c" stroke-width="20" stroke-linecap="round" />
-  <circle cx="614" cy="542" r="24" fill="#f8d48c" />
-  <circle cx="596" cy="448" r="20" fill="#f8d48c" />
-  <circle cx="832" cy="494" r="24" fill="#f8d48c" />
-  <rect x="1090" y="630" width="118" height="20" rx="10" fill="#7a6253" />
-  <rect x="1140" y="578" width="20" height="92" rx="10" fill="#7a6253" />
+  <path d="M0 522 C196 472 346 540 544 490 C726 446 890 522 1078 482 C1142 468 1194 460 1232 454 V706 H0 Z" fill="#233d43" />
+  <path d="M166 144 V552 C166 188 204 152 250 152 H1082 C1128 152 1166 188 1166 234 V552" fill="none" stroke="rgba(255,255,255,0.24)" stroke-width="10" />
+  <path d="M308 168 V552 M622 152 V552 M932 168 V552" stroke="rgba(255,255,255,0.14)" stroke-width="4" />
+  <path d="M894 182 C856 286 818 358 748 486" fill="none" stroke="rgba(255,241,190,0.34)" stroke-width="18" stroke-linecap="round" />
+  <circle cx="846" cy="354" r="122" fill="rgba(255,212,134,0.2)" />
+  <circle cx="846" cy="354" r="88" fill="none" stroke="#d5b06a" stroke-width="16" />
+  <circle cx="846" cy="354" r="28" fill="#d5b06a" />
+  <circle cx="846" cy="286" r="20" fill="#d5b06a" />
+  <circle cx="906" cy="322" r="20" fill="#d5b06a" />
+  <circle cx="906" cy="388" r="20" fill="#d5b06a" />
+  <circle cx="846" cy="424" r="20" fill="#d5b06a" />
+  <circle cx="786" cy="388" r="20" fill="#d5b06a" />
+  <circle cx="786" cy="322" r="20" fill="#d5b06a" />
+  <rect x="932" y="232" width="12" height="234" rx="6" fill="#d9c094" />
+  <circle cx="938" cy="490" r="34" fill="#d9c094" />
+  <path d="M522 552 C542 464 586 406 650 350" fill="none" stroke="#5a8f5e" stroke-width="22" stroke-linecap="round" />
+  <path d="M650 350 C610 328 574 298 544 254" fill="none" stroke="#82d886" stroke-width="14" stroke-linecap="round" />
+  <path d="M676 316 C716 294 756 264 804 220" fill="none" stroke="#82d886" stroke-width="14" stroke-linecap="round" />
+  <circle cx="650" cy="350" r="24" fill="#f7d68b" filter="url(#glow)" />
+  <circle cx="612" cy="286" r="18" fill="#f7d68b" />
+  <circle cx="812" cy="218" r="18" fill="#f7d68b" />
 
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Clockmaker&#x27;s</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Conservatory</text>
 </svg>
