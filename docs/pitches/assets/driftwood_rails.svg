@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title>Driftwood Rails</title>
+  <desc>Sunset handcar routes built across tidal flats for festival season</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffc596" />
+      <stop offset="100%" stop-color="#446d93" />
+    </linearGradient>
+    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd7ac" />
+      <stop offset="100%" stop-color="#ff9e64" />
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)" />
+  <rect x="28" y="28" width="1544" height="844" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
+  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
+  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">Driftwood Rails</text>
+  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">Sunset handcar routes built across tidal flats for festival season</text>
+
+  <circle cx="1274" cy="176" r="96" fill="#ffe0b0" opacity="0.52" />
+  <path d="M0 512 C188 470 400 522 572 490 C766 452 958 540 1168 500 C1330 470 1460 510 1600 492 V900 H0 Z" fill="#729dbe" />
+  <path d="M0 610 C216 580 406 642 590 620 C790 596 982 666 1188 638 C1374 614 1484 648 1600 634 V900 H0 Z" fill="#8fc4d9" />
+  <path d="M0 696 C188 672 422 728 620 710 C848 688 988 752 1214 730 C1388 714 1490 748 1600 738 V900 H0 Z" fill="#f3d1a4" />
+  <path d="M240 818 C334 760 422 732 518 712 C622 690 752 670 852 640 C952 608 1048 562 1196 454" fill="none" stroke="#6e5546" stroke-width="22" stroke-linecap="round" />
+  <path d="M250 818 C344 760 434 732 530 712 C634 690 762 670 862 640 C964 608 1060 562 1208 454" fill="none" stroke="#b1856a" stroke-width="8" stroke-linecap="round" />
+  <path d="M306 794 L296 842 M396 758 L388 810 M486 730 L478 784 M584 702 L576 758 M688 676 L680 732 M792 648 L784 704 M894 616 L886 674 M996 572 L990 628 M1100 520 L1092 576" stroke="#4e382f" stroke-width="10" stroke-linecap="round" />
+  <rect x="620" y="676" width="124" height="54" rx="18" fill="#9b694d" />
+  <circle cx="648" cy="738" r="20" fill="#4a3b34" />
+  <circle cx="724" cy="738" r="20" fill="#4a3b34" />
+  <rect x="648" y="622" width="70" height="46" rx="16" fill="#d4b184" />
+  <path d="M1120 532 C1164 512 1208 514 1258 530" fill="none" stroke="#ffefc5" stroke-width="10" stroke-linecap="round" />
+  <circle cx="1238" cy="522" r="10" fill="#ffefc5" filter="url(#softGlow)" />
+  <circle cx="1278" cy="548" r="10" fill="#ffefc5" filter="url(#softGlow)" />
+  <circle cx="1318" cy="516" r="10" fill="#ffefc5" filter="url(#softGlow)" />
+  <circle cx="1358" cy="548" r="10" fill="#ffefc5" filter="url(#softGlow)" />
+  <path d="M1218 560 C1250 520 1296 486 1356 472" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="8" stroke-linecap="round" />
+
+</svg>

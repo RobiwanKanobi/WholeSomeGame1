@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title>Song of the Rootbound</title>
+  <desc>Paper-cut forest harmonies healing a fractured woodland</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#17355b" />
+      <stop offset="100%" stop-color="#2d5d4a" />
+    </linearGradient>
+    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd7ac" />
+      <stop offset="100%" stop-color="#ff9e64" />
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)" />
+  <rect x="28" y="28" width="1544" height="844" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
+  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
+  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">Song of the Rootbound</text>
+  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">Paper-cut forest harmonies healing a fractured woodland</text>
+
+  <path d="M0 572 C190 520 392 598 552 560 C756 514 926 612 1128 562 C1304 520 1462 586 1600 550 V900 H0 Z" fill="#18334b" />
+  <path d="M0 684 C204 646 372 716 576 680 C786 642 962 726 1166 692 C1336 662 1486 716 1600 688 V900 H0 Z" fill="#1b413f" />
+  <circle cx="1280" cy="168" r="84" fill="#dff0c0" opacity="0.42" />
+  <ellipse cx="342" cy="484" rx="52" ry="210" fill="#20422f" />
+  <ellipse cx="1212" cy="474" rx="58" ry="220" fill="#21412f" />
+  <ellipse cx="478" cy="450" rx="44" ry="182" fill="#1f3c2f" />
+  <ellipse cx="1088" cy="434" rx="46" ry="196" fill="#1f3c2f" />
+  <rect x="736" y="492" width="22" height="210" rx="11" fill="#3b2e31" />
+  <circle cx="748" cy="446" r="52" fill="#f1b38d" />
+  <path d="M680 690 C724 624 764 592 844 580" fill="none" stroke="#6d5036" stroke-width="20" stroke-linecap="round" />
+  <path d="M820 470 C850 520 872 580 878 644" fill="none" stroke="#f0d7a1" stroke-width="10" stroke-linecap="round" />
+  <path d="M682 630 C794 598 928 586 1076 604" fill="none" stroke="rgba(141,255,196,0.62)" stroke-width="6" />
+  <path d="M658 662 C792 630 930 620 1094 642" fill="none" stroke="rgba(141,255,196,0.62)" stroke-width="6" />
+  <path d="M636 694 C800 664 954 658 1110 680" fill="none" stroke="rgba(141,255,196,0.62)" stroke-width="6" />
+  <circle cx="862" cy="636" r="14" fill="#9dffd3" filter="url(#softGlow)" />
+  <circle cx="932" cy="620" r="14" fill="#9dffd3" filter="url(#softGlow)" />
+  <circle cx="1012" cy="648" r="14" fill="#9dffd3" filter="url(#softGlow)" />
+  <path d="M320 900 C410 812 510 768 624 726 C710 694 804 680 940 662 C1048 648 1190 604 1282 528" fill="none" stroke="rgba(120,255,192,0.36)" stroke-width="14" stroke-linecap="round" />
+  <path d="M392 900 C462 830 554 778 656 748 C748 720 848 710 946 694 C1060 676 1168 640 1270 570" fill="none" stroke="rgba(120,255,192,0.24)" stroke-width="10" stroke-linecap="round" />
+  <circle cx="1018" cy="366" r="8" fill="#ffe37a" />
+  <circle cx="1058" cy="330" r="8" fill="#ffe37a" />
+  <circle cx="1098" cy="390" r="8" fill="#ffe37a" />
+  <circle cx="1148" cy="344" r="8" fill="#ffe37a" />
+
+</svg>

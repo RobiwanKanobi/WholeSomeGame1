@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title>Glassgarden Architects</title>
+  <desc>Sunlit underwater domes grown from blown glass</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5cb6d9" />
+      <stop offset="100%" stop-color="#0f3958" />
+    </linearGradient>
+    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd7ac" />
+      <stop offset="100%" stop-color="#ff9e64" />
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)" />
+  <rect x="28" y="28" width="1544" height="844" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
+  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
+  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">Glassgarden Architects</text>
+  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">Sunlit underwater domes grown from blown glass</text>
+
+  <path d="M0 0 C420 80 1180 20 1600 0 V900 H0 Z" fill="rgba(255,255,255,0.06)" />
+  <path d="M0 0 L1600 0 L1600 176 C1348 210 1186 270 1040 376 C900 476 760 544 550 596 C396 634 200 628 0 598 Z" fill="rgba(255,255,255,0.08)" />
+  <path d="M230 760 C330 682 450 644 590 642 C710 640 816 682 940 682 C1088 682 1194 626 1366 536" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="18" />
+  <path d="M210 760 C300 698 430 674 566 684 C720 694 850 744 972 742 C1140 740 1274 688 1388 622" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="12" />
+  <path d="M286 724 C286 584 404 470 548 470 C650 470 726 520 772 596 V724 Z" fill="url(#glass)" stroke="rgba(255,255,255,0.42)" stroke-width="8" />
+  <path d="M642 748 C642 622 748 520 876 520 C964 520 1032 558 1082 630 V748 Z" fill="url(#glass)" stroke="rgba(255,255,255,0.4)" stroke-width="8" />
+  <path d="M974 734 C974 634 1064 554 1178 554 C1262 554 1326 596 1370 660 V734 Z" fill="url(#glass)" stroke="rgba(255,255,255,0.4)" stroke-width="8" />
+  <path d="M1188 62 C1126 320 1038 454 930 622" fill="none" stroke="rgba(255,247,176,0.7)" stroke-width="18" stroke-linecap="round" />
+  <path d="M1264 42 C1188 294 1108 442 1028 588" fill="none" stroke="rgba(255,226,146,0.44)" stroke-width="12" stroke-linecap="round" />
+  <circle cx="930" cy="620" r="26" fill="#ffd486" filter="url(#softGlow)" />
+  <path d="M806 760 C822 700 842 654 878 616" fill="none" stroke="#93f6d6" stroke-width="12" stroke-linecap="round" />
+  <path d="M1096 780 C1114 720 1132 676 1162 640" fill="none" stroke="#93f6d6" stroke-width="12" stroke-linecap="round" />
+  <ellipse cx="516" cy="370" rx="22" ry="10" fill="rgba(255,255,255,0.56)" />
+  <ellipse cx="610" cy="330" rx="26" ry="12" fill="rgba(255,255,255,0.56)" />
+  <ellipse cx="1256" cy="406" rx="22" ry="10" fill="rgba(255,255,255,0.56)" />
+  <ellipse cx="1322" cy="446" rx="26" ry="12" fill="rgba(255,255,255,0.56)" />
+  <circle cx="462" cy="760" r="22" fill="#4bd5b5" opacity="0.5" />
+  <circle cx="566" cy="776" r="18" fill="#7ce8ff" opacity="0.5" />
+  <circle cx="930" cy="804" r="20" fill="#a4ffcf" opacity="0.42" />
+
+</svg>

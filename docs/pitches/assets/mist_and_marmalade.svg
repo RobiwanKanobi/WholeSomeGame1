@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title>Mist &amp; Marmalade</title>
+  <desc>A mountain tearoom brewing comfort out of weather</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffcfab" />
+      <stop offset="100%" stop-color="#648b97" />
+    </linearGradient>
+    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd7ac" />
+      <stop offset="100%" stop-color="#ff9e64" />
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)" />
+  <rect x="28" y="28" width="1544" height="844" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
+  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
+  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">Mist &amp; Marmalade</text>
+  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">A mountain tearoom brewing comfort out of weather</text>
+
+  <rect x="0" y="546" width="1600" height="354" fill="#5d4638" />
+  <rect x="162" y="244" width="590" height="360" rx="32" fill="rgba(255,255,255,0.24)" stroke="rgba(255,255,255,0.36)" />
+  <path d="M212 466 C310 404 420 416 514 372 C586 338 640 320 702 320" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="24" stroke-linecap="round" />
+  <circle cx="998" cy="622" r="96" fill="#ffb58d" opacity="0.14" />
+  <rect x="918" y="284" width="442" height="252" rx="28" fill="rgba(211,234,244,0.28)" stroke="rgba(255,255,255,0.32)" />
+  <path d="M936 470 C1020 396 1102 414 1188 352 C1266 296 1330 318 1352 300" fill="none" stroke="rgba(255,255,255,0.34)" stroke-width="34" stroke-linecap="round" />
+  <rect x="236" y="534" width="1028" height="32" rx="16" fill="#7b5f4c" />
+  <rect x="226" y="566" width="1056" height="204" rx="24" fill="#6a4f41" />
+  <rect x="294" y="404" width="74" height="128" rx="18" fill="rgba(255,177,108,0.72)" />
+  <rect x="392" y="384" width="82" height="148" rx="18" fill="rgba(255,213,137,0.72)" />
+  <rect x="496" y="422" width="78" height="110" rx="18" fill="rgba(255,137,104,0.72)" />
+  <rect x="602" y="396" width="86" height="136" rx="18" fill="rgba(148,215,239,0.72)" />
+  <rect x="930" y="582" width="192" height="74" rx="32" fill="#f6f0de" />
+  <path d="M986 582 C962 536 970 516 1020 496 C1002 552 1040 548 1058 496 C1052 548 1082 550 1104 504" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="12" stroke-linecap="round" />
+  <circle cx="1210" cy="488" r="34" fill="rgba(255,183,112,0.82)" />
+  <circle cx="1292" cy="472" r="34" fill="rgba(132,205,239,0.82)" />
+  <circle cx="1372" cy="490" r="34" fill="rgba(246,139,118,0.82)" />
+  <rect x="1188" y="520" width="44" height="90" rx="14" fill="#f6d8b3" />
+  <rect x="1270" y="504" width="44" height="106" rx="14" fill="#f6d8b3" />
+  <rect x="1350" y="522" width="44" height="88" rx="14" fill="#f6d8b3" />
+  <circle cx="1018" cy="620" r="16" fill="#ffb27b" filter="url(#softGlow)" />
+
+</svg>

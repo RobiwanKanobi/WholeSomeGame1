@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title>The Tide Painter</title>
+  <desc>Sunrise brushwork that guides a living shoreline</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd6b1" />
+      <stop offset="100%" stop-color="#4ba3d7" />
+    </linearGradient>
+    <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.65)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.08)" />
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd7ac" />
+      <stop offset="100%" stop-color="#ff9e64" />
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)" />
+  <rect x="28" y="28" width="1544" height="844" rx="30" fill="none" stroke="rgba(255,255,255,0.28)" />
+  <rect x="80" y="76" width="460" height="120" rx="24" fill="rgba(255,251,247,0.14)" stroke="rgba(255,255,255,0.3)" />
+  <text x="112" y="132" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700" fill="#fffaf6">The Tide Painter</text>
+  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" fill="rgba(255,250,246,0.82)">Sunrise brushwork that guides a living shoreline</text>
+
+  <circle cx="1290" cy="170" r="92" fill="#fff0c8" opacity="0.7" />
+  <path d="M0 475 C196 430 358 470 548 442 C756 408 920 480 1134 450 C1310 424 1452 470 1600 446 V900 H0 Z" fill="#6ec3e8" />
+  <path d="M0 566 C200 540 352 602 554 576 C764 548 934 620 1140 592 C1320 568 1460 606 1600 585 V900 H0 Z" fill="#3d91c7" />
+  <path d="M0 676 C210 660 362 706 570 690 C796 672 954 730 1156 712 C1348 694 1480 728 1600 712 V900 H0 Z" fill="#f0c99f" />
+  <path d="M0 742 C212 720 370 784 582 762 C784 740 980 798 1168 774 C1376 748 1488 786 1600 768 V900 H0 Z" fill="#efdcb4" />
+  <path d="M866 650 C948 604 1048 604 1166 656" fill="none" stroke="#ff8765" stroke-width="16" stroke-linecap="round" />
+  <path d="M880 694 C970 646 1062 648 1188 706" fill="none" stroke="#9dffde" stroke-width="14" stroke-linecap="round" />
+  <path d="M1045 430 C1162 438 1266 502 1345 578" fill="none" stroke="rgba(255,255,255,0.62)" stroke-width="12" stroke-linecap="round" />
+  <path d="M1088 468 C1202 470 1296 530 1368 612" fill="none" stroke="rgba(255,255,255,0.44)" stroke-width="9" stroke-linecap="round" />
+  <rect x="392" y="560" width="16" height="168" rx="8" fill="#6a5348" transform="rotate(-18 392 560)" />
+  <path d="M288 694 C352 634 416 604 484 604 C524 604 540 654 502 684 C438 734 374 748 306 734 Z" fill="#224f59" />
+  <circle cx="554" cy="722" r="18" fill="#f8ad7f" />
+  <circle cx="610" cy="698" r="22" fill="#f8ad7f" />
+  <circle cx="662" cy="734" r="18" fill="#f8ad7f" />
+  <path d="M508 734 C560 694 614 676 674 694" fill="none" stroke="rgba(255,255,255,0.34)" stroke-width="6" />
+  <circle cx="482" cy="786" r="10" fill="#d28b66" />
+  <circle cx="524" cy="816" r="9" fill="#d28b66" />
+  <circle cx="576" cy="790" r="8" fill="#d28b66" />
+  <circle cx="1180" cy="548" r="18" fill="rgba(255,255,255,0.4)" />
+
+</svg>
