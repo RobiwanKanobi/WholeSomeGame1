@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
+  <title>Loom &amp; Lantern</title>
+  <desc>Steam capsule concept art with glowing lantern loom and stitched twilight thread</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#25315b" />
+      <stop offset="100%" stop-color="#f09361" />
+    </linearGradient>
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#ffd58d" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#ffd58d" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
+    </linearGradient>
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
+
+  <circle cx="1056" cy="118" r="58" fill="#fff1c8" opacity="0.46" />
+  <path d="M0 432 C154 396 306 438 476 404 C660 370 858 432 1038 396 C1132 378 1194 372 1232 366 V706 H0 Z" fill="#314978" />
+  <path d="M0 510 C168 478 344 542 516 510 C686 478 856 536 1036 504 C1124 490 1188 484 1232 478 V706 H0 Z" fill="#44395c" />
+  <path d="M0 568 C174 542 362 588 536 562 C708 536 894 592 1082 554 C1156 540 1210 532 1232 526 V706 H0 Z" fill="#2f2941" />
+  <rect x="790" y="132" width="16" height="338" rx="8" fill="#35263d" />
+  <rect x="948" y="132" width="16" height="338" rx="8" fill="#35263d" />
+  <path d="M784 140 C826 72 926 72 972 140" fill="none" stroke="#3f2c44" stroke-width="16" stroke-linecap="round" />
+  <rect x="846" y="180" width="64" height="164" rx="30" fill="#ffcb73" filter="url(#glow)" />
+  <rect x="860" y="194" width="36" height="138" rx="18" fill="#fff6d6" opacity="0.8" />
+  <path d="M768 218 C1010 214 1094 314 1176 398" fill="none" stroke="#ffd584" stroke-width="10" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M774 248 C986 260 1070 344 1140 424" fill="none" stroke="#95e7db" stroke-width="8" stroke-linecap="round" />
+  <path d="M780 276 C962 300 1038 378 1102 456" fill="none" stroke="#f4a1ba" stroke-width="8" stroke-linecap="round" />
+  <rect x="824" y="166" width="8" height="188" fill="#f37e57" />
+  <rect x="850" y="166" width="8" height="188" fill="#f6c161" />
+  <rect x="876" y="166" width="8" height="188" fill="#84e2d8" />
+  <rect x="902" y="166" width="8" height="188" fill="#f4adc3" />
+  <path d="M126 560 h82 v82 h-82 z" fill="#6b5760" />
+  <path d="M228 524 h94 v118 h-94 z" fill="#7f6970" />
+  <path d="M342 548 h108 v94 h-108 z" fill="#8f7477" />
+  <path d="M472 506 h92 v136 h-92 z" fill="#75616b" />
+  <polygon points="126,560 167,522 208,560" fill="#48384f" />
+  <polygon points="228,524 275,480 322,524" fill="#533e59" />
+  <polygon points="342,548 396,506 450,548" fill="#584260" />
+  <polygon points="472,506 518,466 564,506" fill="#523d59" />
+  <circle cx="278" cy="564" r="8" fill="#ffd99f" filter="url(#glow)" />
+  <circle cx="518" cy="552" r="9" fill="#ffd99f" filter="url(#glow)" />
+
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Loom</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">&amp; Lantern</text>
+</svg>

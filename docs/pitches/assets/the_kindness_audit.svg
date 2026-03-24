@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
+  <title>The Kindness Audit</title>
+  <desc>Steam capsule concept art with giant heart stamp, papers, and civic desk glow</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5c7a4" />
+      <stop offset="100%" stop-color="#5e7b86" />
+    </linearGradient>
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#ffd09d" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#ffd09d" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
+    </linearGradient>
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
+
+  <rect x="0" y="474" width="1232" height="232" fill="#745344" />
+  <rect x="652" y="168" width="268" height="344" rx="24" fill="#f5eee0" transform="rotate(8 652 168)" filter="url(#shadow)" />
+  <path d="M736 228 h98 M718 278 h126 M706 330 h142 M700 384 h132" stroke="#d6c9b6" stroke-width="14" stroke-linecap="round" />
+  <circle cx="866" cy="438" r="84" fill="#ffcf9a" />
+  <circle cx="866" cy="438" r="42" fill="#f58872" />
+  <path d="M866 404 C886 368 930 360 960 386 C992 414 992 468 952 490 C922 506 890 494 866 468 C842 494 810 506 780 490 C740 468 740 414 772 386 C802 360 846 368 866 404 Z" fill="#f58872" filter="url(#glow)" />
+  <rect x="298" y="194" width="176" height="242" rx="26" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.34)" />
+  <rect x="214" y="464" width="820" height="26" rx="13" fill="#634738" />
+  <rect x="208" y="490" width="842" height="146" rx="22" fill="#6d4f3f" />
+  <rect x="780" y="520" width="84" height="84" rx="18" fill="#ffcb9f" />
+  <rect x="878" y="500" width="92" height="104" rx="18" fill="#96d7c6" />
+  <rect x="984" y="536" width="80" height="68" rx="18" fill="#f7a37c" />
+  <path d="M786 624 C850 574 926 564 1016 568" fill="none" stroke="rgba(255,237,194,0.56)" stroke-width="10" stroke-linecap="round" />
+
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">The Kindness</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Audit</text>
+</svg>

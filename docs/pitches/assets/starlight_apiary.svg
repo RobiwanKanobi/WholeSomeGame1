@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
+  <title>Starlight Apiary</title>
+  <desc>Steam capsule concept art with honey jar focal point and glowing bee constellations</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14254a" />
+      <stop offset="100%" stop-color="#2a5a74" />
+    </linearGradient>
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#8befff" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#8befff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
+    </linearGradient>
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
+
+  <circle cx="1000" cy="130" r="70" fill="#f8efc3" opacity="0.32" />
+  <path d="M0 504 C194 468 358 526 546 498 C706 474 888 526 1066 494 C1148 480 1206 470 1232 464 V706 H0 Z" fill="#11253f" />
+  <path d="M0 560 C208 528 376 578 560 548 C724 522 912 578 1080 548 C1156 534 1208 526 1232 520 V706 H0 Z" fill="#163550" />
+  <path d="M840 154 L888 126 L924 164 L970 130 L1010 176 L1058 144" fill="none" stroke="#90ebff" stroke-width="6" stroke-linecap="round" />
+  <circle cx="840" cy="154" r="9" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="888" cy="126" r="7" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="924" cy="164" r="8" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="970" cy="130" r="7" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="1010" cy="176" r="8" fill="#90ebff" filter="url(#glow)" />
+  <circle cx="1058" cy="144" r="7" fill="#90ebff" filter="url(#glow)" />
+  <path d="M706 210 C746 166 842 156 896 202 L914 326 C918 380 876 420 822 420 H768 C714 420 672 380 676 326 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.38)" stroke-width="8" />
+  <path d="M732 242 h126 v46 c0 52 -28 76 -64 76 c-36 0 -62 -24 -62 -76 z" fill="#f0b764" filter="url(#glow)" />
+  <rect x="776" y="208" width="38" height="34" rx="12" fill="#ffe6b2" />
+  <path d="M518 300 h126 l20 26 v104 l-20 22 h-126 l-20 -22 v-104 z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.28)" stroke-width="6" />
+  <path d="M536 330 h90 M536 368 h90 M536 406 h90" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round" />
+  <ellipse cx="938" cy="468" rx="26" ry="12" fill="#82edff" />
+  <ellipse cx="988" cy="430" rx="24" ry="11" fill="#82edff" />
+  <ellipse cx="1040" cy="474" rx="28" ry="12" fill="#82edff" />
+  <ellipse cx="226" cy="592" rx="84" ry="34" fill="#2b615d" />
+  <ellipse cx="312" cy="564" rx="74" ry="30" fill="#366d66" />
+  <ellipse cx="388" cy="598" rx="66" ry="26" fill="#2b5753" />
+  <path d="M146 624 C260 566 368 568 470 620" fill="none" stroke="#53cda7" stroke-width="10" stroke-linecap="round" />
+  <path d="M192 644 C284 596 396 600 510 644" fill="none" stroke="#f6a3c5" stroke-width="10" stroke-linecap="round" />
+
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Starlight</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Apiary</text>
+</svg>

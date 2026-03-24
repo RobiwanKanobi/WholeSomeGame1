@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
+  <title>Comet Croft</title>
+  <desc>Steam capsule concept art with bright comet diagonal and floating farmhouse island</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6783d6" />
+      <stop offset="100%" stop-color="#1f3760" />
+    </linearGradient>
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#ffe59a" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#ffe59a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
+    </linearGradient>
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
+
+  <path d="M0 0 C322 46 846 18 1232 0 V706 H0 Z" fill="rgba(255,255,255,0.05)" />
+  <path d="M706 104 C770 50 858 30 962 26 C1056 22 1134 4 1216 -36" fill="none" stroke="rgba(255,255,255,0.24)" stroke-width="6" stroke-linecap="round" />
+  <path d="M760 468 C782 372 864 320 964 320 H1120 C1210 320 1280 372 1298 468 L1308 560 H738 Z" fill="#6c593a" transform="translate(-120,0)" />
+  <path d="M786 444 C822 384 886 350 970 350 H1114 C1198 350 1260 388 1290 444 L1300 504 H774 Z" fill="#8cc56a" transform="translate(-120,0)" />
+  <path d="M834 374 v112 M914 370 v116 M994 370 v118 M1076 372 v116 M1158 380 v108" stroke="rgba(62,107,55,0.76)" stroke-width="8" transform="translate(-120,0)" />
+  <path d="M834 424 C858 396 892 388 914 414 C936 440 974 440 994 414 C1016 388 1048 384 1076 414 C1100 440 1134 438 1158 410" fill="none" stroke="#d7f4a6" stroke-width="10" stroke-linecap="round" transform="translate(-120,0)" />
+  <path d="M1080 96 C984 166 918 216 844 312" fill="none" stroke="#ffe59a" stroke-width="20" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M1128 70 C1030 148 958 198 884 290" fill="none" stroke="rgba(255,229,154,0.48)" stroke-width="10" stroke-linecap="round" />
+  <path d="M1084 98 l74 -26 l-54 62" fill="#ffe59a" />
+  <path d="M1146 56 l64 -22 l-46 56" fill="#ffe59a" />
+  <circle cx="932" cy="558" r="28" fill="rgba(0,0,0,0.18)" />
+
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Comet</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Croft</text>
+</svg>

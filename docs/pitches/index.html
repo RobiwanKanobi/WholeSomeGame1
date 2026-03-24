@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wholesome 2D Steam Pitches</title>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --paper: rgba(255, 251, 245, 0.86);
+      --ink: #253143;
+      --muted: #5c677a;
+      --accent: #ff8f5a;
+      --accent-soft: #ffe1cf;
+      --line: rgba(37, 49, 67, 0.12);
+      --shadow: 0 18px 60px rgba(37, 49, 67, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255, 223, 189, 0.9), transparent 32%),
+        linear-gradient(180deg, #fff9f4 0%, #f7f0e7 42%, #ece8f7 100%);
+    }
+
+    main {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 32px 24px 72px;
+    }
+
+    .slide {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
+      gap: 24px;
+      min-height: 100vh;
+      padding: 28px 0;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .content {
+      padding: 36px;
+    }
+
+    .cover {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #8e4f27;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      margin-top: 16px;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      max-width: 22ch;
+      font-size: clamp(19px, 2vw, 26px);
+      line-height: 1.3;
+      color: var(--muted);
+    }
+
+    .deck-note {
+      margin-top: 24px;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .mini-card,
+    .meta-card {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(37, 49, 67, 0.08);
+    }
+
+    .mini-card strong,
+    .meta-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .mini-card span,
+    .meta-card span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    .cover-column {
+      display: grid;
+      gap: 16px;
+    }
+
+    .cover-hero {
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .cover-hero img,
+    .art img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      border: 1px solid rgba(37, 49, 67, 0.1);
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .slide-number {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9c6f4d;
+    }
+
+    .hook {
+      margin-top: 16px;
+      font-size: clamp(18px, 1.8vw, 24px);
+      line-height: 1.4;
+      color: var(--muted);
+      max-width: 28ch;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 143, 90, 0.14);
+      color: #93532c;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .tile {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(37, 49, 67, 0.08);
+    }
+
+    .tile h3 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8f5e3a;
+    }
+
+    .tile p {
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--ink);
+    }
+
+    li {
+      margin-top: 12px;
+      line-height: 1.55;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .art {
+      padding: 20px;
+    }
+
+    .art-caption {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(37, 49, 67, 0.08);
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .selection-table {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .selection-row {
+      display: grid;
+      grid-template-columns: 180px repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .selection-row > div {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(37, 49, 67, 0.08);
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .selection-row .label {
+      font-weight: 700;
+      color: var(--ink);
+      background: rgba(255, 143, 90, 0.1);
+    }
+
+    @media (max-width: 1080px) {
+      .slide,
+      .cover {
+        grid-template-columns: 1fr;
+      }
+
+      .content {
+        padding: 28px;
+      }
+
+      .split,
+      .cover-grid,
+      .selection-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      .slide {
+        min-height: 100vh;
+        page-break-after: always;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="slide cover">
+      <div class="panel content">
+        <div class="eyebrow">Pitch Deck / 10 New Concepts</div>
+        <h1>Wholesome 2D pitches built for Steam-first discovery.</h1>
+        <p class="subtitle">Ten new commercially readable concepts, each with a visual identity strong enough for capsule art, screenshots, and a short trailer.</p>
+        <p class="deck-note">Every pitch in this deck stays non-violent, kind, and easy to understand from a store page. The art mockups on the right show the target mood, palette, and silhouette language for each game.</p>
+        <div class="cover-grid">
+          <div class="mini-card"><strong>Loom &amp; Lantern</strong><span>Textile restoration puzzle adventure.</span></div>
+          <div class="mini-card"><strong>Starlight Apiary</strong><span>Memory honey tending and story care.</span></div>
+          <div class="mini-card"><strong>The Tide Painter</strong><span>Beach painting puzzles guided by the tide.</span></div>
+          <div class="mini-card"><strong>Clockmaker's Conservatory</strong><span>Brass botanical time puzzles in a greenhouse.</span></div>
+          <div class="mini-card"><strong>Song of the Rootbound</strong><span>Musical forest healing through harmony.</span></div>
+          <div class="mini-card"><strong>Mist &amp; Marmalade</strong><span>Weather-brewing tearoom management.</span></div>
+          <div class="mini-card"><strong>Glassgarden Architects</strong><span>Underwater glass habitats and light puzzles.</span></div>
+          <div class="mini-card"><strong>The Kindness Audit</strong><span>Community upgrades powered by empathy.</span></div>
+          <div class="mini-card"><strong>Driftwood Rails</strong><span>Coastal track laying for festival salvage.</span></div>
+          <div class="mini-card"><strong>Comet Croft</strong><span>Sky-island farming under constellations.</span></div>
+        </div>
+      </div>
+      <div class="cover-column">
+        <div class="panel cover-hero">
+          <img src="assets/loom_and_lantern.svg" alt="Loom and Lantern concept art">
+        </div>
+        <div class="meta-card">
+          <strong>Shared constraints</strong>
+          <span>2D presentation, wholesome tone, Steam-only release for now, and hooks clear enough to market with one sentence and one hero image.</span>
+        </div>
+        <div class="meta-card">
+          <strong>How to use this deck</strong>
+          <span>Pick favorites by fantasy, clarity, and screenshot appeal first. Then combine the strongest emotional hook, easiest core loop explanation, and most ownable visual silhouette.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">01 / 10</div>
+        <h2>Loom &amp; Lantern</h2>
+        <p class="hook">Restore a forgotten textile village by weaving patterns that literally mend roofs, bridges, and strained relationships.</p>
+        <div class="chips">
+          <span class="chip">Cozy crafting puzzle</span>
+          <span class="chip">Village restoration</span>
+          <span class="chip">Handmade textures</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Gather dyes, thread motifs on a loom grid, then apply finished tapestries to repair spaces and unlock routes through the valley.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>The player fixes beauty with their hands and sees the town soften into color one careful repair at a time.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: tactile weaving puzzles that reshape the environment in immediately visible ways.</li>
+          <li>Art advantage: fabric folds, embroidery, and lantern light give screenshots a distinctive handcrafted identity.</li>
+          <li>Expansion path: new districts, pattern families, and character commissions can deepen the fantasy without changing the wholesome tone.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/loom_and_lantern.svg" alt="Loom and Lantern mock art">
+        <div class="art-caption">Visual direction: warm dusk lanterns, indigo hills, giant loom silhouettes, and threads of light that physically stitch the town back together.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">02 / 10</div>
+        <h2>Starlight Apiary</h2>
+        <p class="hook">Tend glowing bees whose honey stores memories, then blend each batch to comfort townspeople who are afraid of forgetting.</p>
+        <div class="chips">
+          <span class="chip">Garden management</span>
+          <span class="chip">Narrative comfort</span>
+          <span class="chip">Bioluminescent night art</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Plant night gardens, guide hive routes, harvest memory honey, and mix jars that match character stories and seasonal requests.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>Nostalgia feels sweet rather than sad, with every jar preserving something worth holding onto.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: build dreamlike gardens that change bee behavior, flavor notes, and story outcomes.</li>
+          <li>Art advantage: glowing honey trails and stained-glass hives read instantly in thumbnails and trailer cuts.</li>
+          <li>Expansion path: new flowers, bee species, and recipes create endless soft progression without pressure.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/starlight_apiary.svg" alt="Starlight Apiary mock art">
+        <div class="art-caption">Visual direction: cobalt skies, neon cyan bee constellations, translucent jars, and sleepy village windows lit from below by warm honey glow.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">03 / 10</div>
+        <h2>The Tide Painter</h2>
+        <p class="hook">Paint symbols into wet sand each dawn so the returning tide remembers safe paths for sea life, tide pools, and beachside dreams.</p>
+        <div class="chips">
+          <span class="chip">Beach exploration</span>
+          <span class="chip">Soft physics puzzles</span>
+          <span class="chip">Pastel coastal palette</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Sketch routes, barriers, and tide symbols on the shore, then watch water follow those lines to solve ecosystem puzzles and open new areas.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>The player feels in tune with nature, guiding it gently instead of controlling it harshly.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: the beach becomes a living puzzle board where your brushwork changes the entire shoreline.</li>
+          <li>Art advantage: footprints, painted glyphs, and rolling pastel waves make motion readable in static screenshots.</li>
+          <li>Expansion path: new beaches, weather conditions, and creatures broaden the sandbox while staying calm and intuitive.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/tide_painter.svg" alt="The Tide Painter mock art">
+        <div class="art-caption">Visual direction: low-angle sunrise beach scenes, chalky painted lines in the sand, and glassy waves curling exactly where the brush instructed.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">04 / 10</div>
+        <h2>Clockmaker's Conservatory</h2>
+        <p class="hook">Repair whimsical clock-plants inside a greenhouse where time grows like fruit and every tuned mechanism nudges the season forward.</p>
+        <div class="chips">
+          <span class="chip">Puzzle sim</span>
+          <span class="chip">Botanical brass fantasy</span>
+          <span class="chip">Seasonal progression</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Diagnose time knots, place gears into plant machinery, sync pendulum vines, and harvest temporal blooms to heal new wings of the estate.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>Time becomes something to tend with patience, not something to race against or fear.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: satisfying gear logic puzzles framed by soothing greenhouse stewardship instead of punishing timers.</li>
+          <li>Art advantage: brass petals, glass ceilings, and sun-dial shadows create premium-looking stills with clear thematic identity.</li>
+          <li>Expansion path: new plant-clock species and estates keep the mechanic fresh while preserving readability.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/clockmakers_conservatory.svg" alt="Clockmaker's Conservatory mock art">
+        <div class="art-caption">Visual direction: emerald greenhouse light, brass flower gears, long hanging pendulums, and carefully tuned machinery that feels alive rather than industrial.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">05 / 10</div>
+        <h2>Song of the Rootbound</h2>
+        <p class="hook">Travel with a lute through a fractured forest and teach buried roots to harmonize until the whole woodland remembers one song again.</p>
+        <div class="chips">
+          <span class="chip">Musical exploration</span>
+          <span class="chip">Forest healing</span>
+          <span class="chip">Paper-cut silhouettes</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Find resonant stones, layer melodies through root networks, open paths with harmony puzzles, and collect folktales as playable motifs.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>Belonging is expressed through shared music, making progress feel communal and uplifting instead of solitary.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: approachable music puzzles with no fail state, centered on listening and layering rather than performance mastery.</li>
+          <li>Art advantage: glowing root staves and bark-made instruments create a highly ownable visual language.</li>
+          <li>Expansion path: new biomes can add instrument families, rhythms, and folk motifs without losing the core pitch.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/song_of_the_rootbound.svg" alt="Song of the Rootbound mock art">
+        <div class="art-caption">Visual direction: layered forest cutouts, roots glowing like sheet music beneath the soil, and fireflies pulsing in rhythm around the performer.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">06 / 10</div>
+        <h2>Mist &amp; Marmalade</h2>
+        <p class="hook">Run a foggy mountain tearoom where weather itself becomes an ingredient in jam, tea foam, and the mood of every guest who walks in.</p>
+        <div class="chips">
+          <span class="chip">Cozy shop sim</span>
+          <span class="chip">Recipe alchemy</span>
+          <span class="chip">Watercolor weather</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Forecast mist patterns, collect atmospheric essences, brew blends, decorate the cafe, and watch new travelers become regulars.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>The space itself feels like a refuge, and the player becomes the reason strangers leave warmer than they arrived.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: recipes that blend herbs, weather, and story mood into one easy-to-understand fantasy.</li>
+          <li>Art advantage: steaming cups, fogged windows, and glowing preserve jars make every screenshot cozy on contact.</li>
+          <li>Expansion path: new floors, weather patterns, and guest arcs sustain the game with naturally collectible content.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/mist_and_marmalade.svg" alt="Mist and Marmalade mock art">
+        <div class="art-caption">Visual direction: peach-and-teal fog, wood interiors, weather trapped inside jam jars, and layered steam that makes the entire room feel alive.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">07 / 10</div>
+        <h2>Glassgarden Architects</h2>
+        <p class="hook">Blow glass habitats underwater and bend sunlight through them to grow a shy fish-folk city back into a thriving neighborhood.</p>
+        <div class="chips">
+          <span class="chip">Creative builder</span>
+          <span class="chip">Light-routing puzzle</span>
+          <span class="chip">Underwater city art</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Sculpt domes and arches, place them to refract sunlight, attract residents and species, then grow each district through beauty and shelter.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>The player creates safety through art, making every build feel generous as well as beautiful.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: building and puzzle solving merge through readable beams of color and reactive biodiversity.</li>
+          <li>Art advantage: caustic light, rainbow prisms, and bubble-edged architecture look premium in screenshots.</li>
+          <li>Expansion path: new districts, trims, flora, and sea life can continuously broaden the sandbox.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/glassgarden_architects.svg" alt="Glassgarden Architects mock art">
+        <div class="art-caption">Visual direction: deep blue water, warm shafts of sunlight, hand-blown glass domes, and kaleidoscopic light trails crossing the seafloor.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">08 / 10</div>
+        <h2>The Kindness Audit</h2>
+        <p class="hook">Play a rookie inspector who measures good deeds, resolves community mismatches, and turns small kindness into better public spaces.</p>
+        <div class="chips">
+          <span class="chip">Light detective sim</span>
+          <span class="chip">Community upgrades</span>
+          <span class="chip">Magical civic fantasy</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Interview townspeople, compare ledgers of favors, resolve cases through empathy, and spend recovered goodwill on parks, libraries, and markets.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>The player sees proof that quiet generosity compounds into visible change across the whole town.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: cozy mystery structure without cruelty, powered by fair questions and satisfying public upgrades.</li>
+          <li>Art advantage: stamps, seals, glowing tokens, and lively town projects make the concept visually legible in one frame.</li>
+          <li>Expansion path: new districts and policy choices give room for replayable, low-stakes case design.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/the_kindness_audit.svg" alt="The Kindness Audit mock art">
+        <div class="art-caption">Visual direction: charming municipal desk clutter, floating paperwork, wax seals, and a town square outside visibly changing as kindness is reinvested.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">09 / 10</div>
+        <h2>Driftwood Rails</h2>
+        <p class="hook">Lay temporary rails across tidal flats so your tiny handcar can haul found treasures to crafters preparing the season's shoreline festival.</p>
+        <div class="chips">
+          <span class="chip">Relaxed logistics</span>
+          <span class="chip">Coastal sandbox</span>
+          <span class="chip">Festival progression</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Scout the coast at low tide, snap together track segments, haul driftwood and salvage, then fulfill festival build requests that transform the shoreline.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>Improvised travel and communal celebration make every route feel like preparation for something joyful.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: scenic logistics with playful rails and visible community payoff rather than hard efficiency pressure.</li>
+          <li>Art advantage: mirror-sky puddles, salt sparkle, and bunting-covered rails create highly photographable scenes.</li>
+          <li>Expansion path: new tides, materials, and festivals easily slot into the same peaceful loop.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/driftwood_rails.svg" alt="Driftwood Rails mock art">
+        <div class="art-caption">Visual direction: sunset coastlines, curved driftwood track silhouettes, reflective water, and colorful cargo moving toward a warmly lit beach festival.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="slide-number">10 / 10</div>
+        <h2>Comet Croft</h2>
+        <p class="hook">Farm on a drifting sky-island that sails through meteor showers of seeds, with crops blooming differently under each constellation.</p>
+        <div class="chips">
+          <span class="chip">Sky farming</span>
+          <span class="chip">Exploration and routing</span>
+          <span class="chip">Constellation growth systems</span>
+        </div>
+        <div class="split">
+          <div class="tile">
+            <h3>Core Loop</h3>
+            <p>Steer the croft along star lanes, plant in soil patterns, hybridize star crops, and trade with passing sky neighbors for rare seeds and upgrades.</p>
+          </div>
+          <div class="tile">
+            <h3>Emotional Hook</h3>
+            <p>The game offers rooted comfort inside a moving home, balancing awe and domestic warmth in one clear fantasy.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Store page promise: farming gets a fresh silhouette through sky travel, constellation rules, and meteor-seed harvests.</li>
+          <li>Art advantage: glowing fields against open sky make the game instantly readable on a Steam capsule or store banner.</li>
+          <li>Expansion path: new constellations, islands, and airborne visitors add content without breaking the cozy structure.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/comet_croft.svg" alt="Comet Croft mock art">
+        <div class="art-caption">Visual direction: floating farmland, soft auroras, star-chart crop rows, and meteor seeds streaking down like a friendly rainstorm.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="panel content">
+        <div class="eyebrow">Shortlist guidance</div>
+        <h2>Fast shortlist lens</h2>
+        <p class="hook">Use this last slide to compare which pitch best balances fantasy, clarity, and ownable art direction for a first Steam page.</p>
+        <div class="selection-table">
+          <div class="selection-row">
+            <div class="label">Best visual hook</div>
+            <div>Glassgarden Architects</div>
+            <div>Starlight Apiary</div>
+            <div>Comet Croft</div>
+          </div>
+          <div class="selection-row">
+            <div class="label">Easiest to explain</div>
+            <div>Mist &amp; Marmalade</div>
+            <div>Loom &amp; Lantern</div>
+            <div>Driftwood Rails</div>
+          </div>
+          <div class="selection-row">
+            <div class="label">Best emotional premise</div>
+            <div>Song of the Rootbound</div>
+            <div>Starlight Apiary</div>
+            <div>The Kindness Audit</div>
+          </div>
+          <div class="selection-row">
+            <div class="label">Best commercial wildcard</div>
+            <div>The Tide Painter</div>
+            <div>Clockmaker's Conservatory</div>
+            <div>Comet Croft</div>
+          </div>
+        </div>
+        <ul>
+          <li>If you want the safest broad-audience cozy pitch, start with <strong>Mist &amp; Marmalade</strong> or <strong>Loom &amp; Lantern</strong>.</li>
+          <li>If you want the most premium-looking screenshots, start with <strong>Glassgarden Architects</strong> or <strong>Starlight Apiary</strong>.</li>
+          <li>If you want the most emotionally resonant and unusual concept, start with <strong>Song of the Rootbound</strong> or <strong>The Tide Painter</strong>.</li>
+        </ul>
+      </div>
+      <div class="panel art">
+        <img src="assets/comet_croft.svg" alt="Comet Croft art repeated on shortlist slide">
+        <div class="art-caption">All ten concepts are deliberately scoped to keep the promise clean: wholesome, 2D, visually distinct, and easy to position for Steam-first marketing.</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

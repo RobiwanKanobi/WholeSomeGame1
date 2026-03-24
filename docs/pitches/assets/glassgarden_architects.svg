@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
+  <title>Glassgarden Architects</title>
+  <desc>Steam capsule concept art with prismatic underwater domes and dramatic sunbeams</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5cb8dd" />
+      <stop offset="100%" stop-color="#113a59" />
+    </linearGradient>
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#ffd88c" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#ffd88c" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
+    </linearGradient>
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
+
+  <path d="M0 0 L1232 0 L1232 132 C1078 154 934 220 804 346 C698 450 596 524 444 566 C308 604 170 600 0 584 Z" fill="rgba(255,255,255,0.08)" />
+  <path d="M126 602 C216 532 334 500 466 500 C612 500 718 548 824 548 C958 548 1068 506 1176 426" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="18" stroke-linecap="round" />
+  <path d="M116 624 C216 558 332 530 462 532 C596 534 722 578 844 580 C972 582 1084 548 1186 486" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="12" stroke-linecap="round" />
+  <path d="M432 560 C432 434 532 338 656 338 C750 338 822 390 868 474 V560 Z" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.42)" stroke-width="8" />
+  <path d="M688 574 C688 468 776 388 882 388 C964 388 1028 430 1068 494 V574 Z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.38)" stroke-width="8" />
+  <path d="M1014 52 C960 252 878 374 782 510" fill="none" stroke="rgba(255,242,174,0.76)" stroke-width="20" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M1068 34 C1012 230 934 354 846 476" fill="none" stroke="rgba(255,232,160,0.48)" stroke-width="12" stroke-linecap="round" />
+  <circle cx="782" cy="510" r="22" fill="#ffd88c" filter="url(#glow)" />
+  <path d="M584 560 C602 510 618 470 650 438" fill="none" stroke="#98f5d6" stroke-width="10" stroke-linecap="round" />
+  <path d="M910 586 C926 536 944 496 970 464" fill="none" stroke="#98f5d6" stroke-width="10" stroke-linecap="round" />
+  <circle cx="342" cy="246" r="14" fill="rgba(255,255,255,0.52)" />
+  <circle cx="410" cy="216" r="10" fill="rgba(255,255,255,0.52)" />
+  <circle cx="1044" cy="290" r="12" fill="rgba(255,255,255,0.52)" />
+
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Glassgarden</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Architects</text>
+</svg>

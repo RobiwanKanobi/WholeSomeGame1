@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 706" role="img" aria-labelledby="title desc">
+  <title>The Tide Painter</title>
+  <desc>Steam capsule concept art with dramatic brushstroke wave and reflective sunrise beach</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd7b4" />
+      <stop offset="100%" stop-color="#4489bf" />
+    </linearGradient>
+    <radialGradient id="bloom" cx="72%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#fff0c7" stop-opacity="0.56" />
+      <stop offset="100%" stop-color="#fff0c7" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#162232" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b121d" stop-opacity="0.78" />
+    </linearGradient>
+    <radialGradient id="fog" cx="52%" cy="58%" r="78%">
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#05070a" stop-opacity="0.38" />
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04101b" flood-opacity="0.35" />
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <rect width="1232" height="706" rx="32" fill="url(#bg)" />
+  <rect x="16" y="16" width="1200" height="674" rx="28" fill="none" stroke="rgba(255,255,255,0.24)" />
+  <rect width="1232" height="706" fill="url(#bloom)" />
+
+  <circle cx="1008" cy="118" r="78" fill="#fff0c9" opacity="0.56" />
+  <path d="M0 366 C142 340 320 372 480 346 C620 324 752 350 916 324 C1040 304 1138 314 1232 304 V706 H0 Z" fill="#8fd1ef" />
+  <path d="M0 442 C156 420 332 456 492 430 C644 404 802 444 962 420 C1082 402 1168 408 1232 400 V706 H0 Z" fill="#5ca7d6" />
+  <path d="M0 528 C154 514 336 548 522 520 C698 494 862 540 1018 512 C1110 498 1176 500 1232 492 V706 H0 Z" fill="#f0c89d" />
+  <path d="M0 598 C166 584 336 626 526 606 C714 586 874 632 1028 606 C1114 592 1178 592 1232 586 V706 H0 Z" fill="#f5dfb9" />
+  <path d="M246 540 C404 432 602 404 804 450 C918 476 1022 520 1114 576" fill="none" stroke="#ff8b66" stroke-width="24" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M256 564 C432 470 630 452 828 500 C920 522 1012 568 1088 616" fill="none" stroke="#95f4de" stroke-width="10" stroke-linecap="round" />
+  <path d="M762 374 C878 382 972 426 1056 498" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="12" stroke-linecap="round" />
+  <path d="M804 408 C916 420 996 462 1070 528" fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="8" stroke-linecap="round" />
+  <rect x="196" y="498" width="14" height="140" rx="7" fill="#61473d" transform="rotate(-22 196 498)" />
+  <path d="M120 634 C156 590 198 558 246 546 C266 542 278 560 270 578 C252 618 214 642 166 650 Z" fill="#1f4854" />
+  <circle cx="388" cy="616" r="16" fill="#f5b58c" />
+  <circle cx="438" cy="596" r="18" fill="#f5b58c" />
+  <circle cx="486" cy="628" r="16" fill="#f5b58c" />
+
+  <rect width="1232" height="706" fill="url(#fog)" />
+  <rect x="64" y="456" width="410" height="198" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.24)" />
+  <rect x="92" y="478" width="118" height="8" rx="4" fill="rgba(255,234,188,0.86)" />
+  <text x="92" y="534" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">The Tide</text>
+  <text x="92" y="592" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff9ef" paint-order="stroke" stroke="rgba(0,0,0,0.22)" stroke-width="8">Painter</text>
+</svg>
